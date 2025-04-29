@@ -1,22 +1,21 @@
-<!-- DO NOT IGNORE THE TEMPLATE!
+<!-- НЕ ИГНОРИРУЙТЕ ШАБЛОН!
 
-Thank you for contributing!
+Спасибо за ваш вклад!
 
-Before submitting the PR, please make sure you do the following:
+Перед отправкой PR, пожалуйста, убедитесь, что вы сделали следующее:
 
-- Read the [Contributing Guide](https://github.com/sxzz/contribute).
-- Check that there isn't already a PR that solves the problem the same way to avoid creating a duplicate.
-- Provide a description in this PR that addresses **what** the PR is solving, or reference the issue that it solves (e.g. `fixes #123`).
-- Ideally, include relevant tests that fail without this PR but pass with it.
+- Прочитайте [гайд по контрибьютингу](https://github.com/teplostanski/tsdown.ru/blob/main/CONTRIBUTING.md).
+- Проверьте, что не существует уже открытого PR, который решает ту же проблему аналогичным образом, чтобы избежать дублирования.
+- Укажите в описании PR, **что** решает этот PR, или дайте ссылку на соответствующий issue (например, `fixes #123`).
 
 -->
 
-### Description
+### Описание
 
-<!-- Please insert your description here and provide especially info about the "what" this PR is solving -->
+<!-- Пожалуйста, опишите, что делает этот PR и особенно укажите, какую проблему он решает -->
 
-### Linked Issues
+### Связанные issue
 
-### Additional context
+### Дополнительный контекст
 
-<!-- e.g. is there anything you'd like reviewers to focus on? -->
+<!-- Например, есть ли что-то, на что вы хотите обратить внимание ревьюеров? -->
