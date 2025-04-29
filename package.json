@@ -1,0 +1,58 @@
+{
+  "name": "tsdown",
+  "version": "0.9.5",
+  "packageManager": "pnpm@10.9.0",
+  "description": "The Elegant Bundler for Libraries",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/rolldown/tsdown#readme",
+  "bugs": {
+    "url": "https://github.com/rolldown/tsdown/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rolldown/tsdown.git"
+  },
+  "author": "三咲智子 Kevin Deng <sxzz@sxzz.moe>",
+  "funding": "https://github.com/sponsors/sxzz",
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "docs:generate": "./docs/.vitepress/scripts/docs-generate.sh"
+  },
+  "peerDependencies": {
+    "publint": "^0.3.0",
+    "unplugin-unused": "^0.4.0"
+  },
+  "peerDependenciesMeta": {
+    "publint": {
+      "optional": true
+    },
+    "unplugin-unused": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@sxzz/eslint-config": "catalog:dev",
+    "@sxzz/prettier-config": "catalog:dev",
+    "@types/node": "^22.14.1",
+    "@unocss/eslint-plugin": "catalog:docs",
+    "eslint": "catalog:dev",
+    "prettier": "catalog:dev",
+    "publint": "catalog:dev",
+    "tsx": "catalog:dev",
+    "typedoc": "catalog:docs",
+    "typedoc-plugin-markdown": "catalog:docs",
+    "typescript": "catalog:dev",
+    "unocss": "catalog:docs",
+    "vite": "catalog:docs",
+    "vitepress": "catalog:docs",
+    "vitepress-plugin-group-icons": "catalog:docs",
+    "vitepress-plugin-llms": "catalog:docs",
+    "vue": "catalog:docs"
+  },
+  "prettier": "@sxzz/prettier-config"
+}
