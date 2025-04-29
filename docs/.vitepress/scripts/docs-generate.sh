@@ -26,8 +26,8 @@ if [ -d "./docs/reference/type-aliases" ]; then
 fi
 # Create the type-aliases folder
 mkdir -p ./docs/reference/type-aliases
-# Move types-aliases/Sourcemap.md to ./docs/reference/type-aliases
-mv ./docs/reference/api/type-aliases/Sourcemap.md ./docs/reference/type-aliases/Sourcemap.md
+# Move types-aliases/{Sourcemap,Format}.md to ./docs/reference/type-aliases
+mv ./docs/reference/api/type-aliases/{Sourcemap,Format}.md ./docs/reference/type-aliases
 
 # Remove the api folder
 rm -rf ./docs/reference/api
@@ -41,7 +41,7 @@ safe_sed 's/..\/type-aliases/.\/type-aliases/g' ./docs/reference/config-options.
 safe_sed '1,6d' ./docs/reference/type-aliases/*.md
 
 # Initialize an array of all locales
-locales=("en" "zh-CN")
+locales=("zh-CN")
 # Copy the config-options.md file and the type-aliases folder to each locale
 for locale in "${locales[@]}"; do
   # Copy config-options.md to the locale directory

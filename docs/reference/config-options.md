@@ -1,6 +1,6 @@
 # Интерфейс: Options
 
-Определён в: [options.ts:38](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L38)
+Определён в: [options.ts:43](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L43)
 
 Опции для tsdown.
 
@@ -10,7 +10,7 @@
 
 > `необязательный` **alias**: `Record`\<`string`, `string`\>
 
-Определён в: [options.ts:48](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L48)
+Определён в: [options.ts:53](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L53)
 
 ***
 
@@ -18,7 +18,7 @@
 
 > `необязательный` **clean**: `boolean` \| `string`[]
 
-Определён в: [options.ts:66](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L66)
+Определён в: [options.ts:71](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L71)
 
 ***
 
@@ -26,7 +26,7 @@
 
 > `необязательный` **config**: `string` \| `boolean`
 
-Определён в: [options.ts:102](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L102)
+Определён в: [options.ts:107](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L107)
 
 Путь к файлу конфигурации
 
@@ -36,7 +36,7 @@
 
 > `необязательный` **define**: `Record`\<`string`, `string`\>
 
-Определён в: [options.ts:70](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L70)
+Определён в: [options.ts:75](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L75)
 
 ***
 
@@ -44,7 +44,7 @@
 
 > `необязательный` **dts**: `boolean` \| `Options`
 
-Определён в: [options.ts:125](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L125)
+Определён в: [options.ts:130](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L130)
 
 Генерирует файлы деклараций
 
@@ -54,7 +54,7 @@
 
 > `необязательный` **entry**: `InputOption`
 
-Определён в: [options.ts:40](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L40)
+Определён в: [options.ts:45](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L45)
 
 ***
 
@@ -62,7 +62,7 @@
 
 > `необязательный` **external**: `ExternalOption`
 
-Определён в: [options.ts:41](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L41)
+Определён в: [options.ts:46](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L46)
 
 ***
 
@@ -70,7 +70,7 @@
 
 > `необязательный` **fixedExtension**: `boolean`
 
-Определён в: [options.ts:80](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L80)
+Определён в: [options.ts:85](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L85)
 
 Использует фиксированное расширение для выходных файлов.
 Расширение всегда будет `.cjs` или `.mjs`.
@@ -86,9 +86,9 @@ false
 
 ### format?
 
-> `необязательный` **format**: `ModuleFormat` \| `ModuleFormat`[]
+> `необязательный` **format**: [`Format`](./type-aliases/Format.md) \| [`Format`](./type-aliases/Format.md)[]
 
-Определён в: [options.ts:61](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L61)
+Определён в: [options.ts:66](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L66)
 
 #### По умолчанию
 
@@ -102,7 +102,7 @@ false
 
 > `необязательный` **fromVite**: `boolean` \| `"vitest"`
 
-Определён в: [options.ts:119](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L119)
+Определён в: [options.ts:124](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L124)
 
 Повторно использует конфиг из Vite или Vitest (экспериментально)
 
@@ -118,7 +118,15 @@ false
 
 > `необязательный` **globalName**: `string`
 
-Определён в: [options.ts:62](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L62)
+Определён в: [options.ts:67](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L67)
+
+***
+
+### hooks?
+
+> `необязательный` **hooks**: `Partial`\<`TsdownHooks`\> \| (`hooks`) => `Awaitable`\<`void`\>
+
+Определён в: [options.ts:150](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L150)
 
 ***
 
@@ -126,7 +134,7 @@ false
 
 > `необязательный` **inputOptions**: `InputOptions` \| (`options`, `format`) => `Awaitable`\<`null` \| `void` \| `InputOptions`\>
 
-Определён в: [options.ts:52](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L52)
+Определён в: [options.ts:57](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L57)
 
 ***
 
@@ -134,7 +142,7 @@ false
 
 > `необязательный` **minify**: `boolean`
 
-Определён в: [options.ts:68](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L68)
+Определён в: [options.ts:73](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L73)
 
 #### По умолчанию
 
@@ -148,7 +156,7 @@ false
 
 > `необязательный` **noExternal**: `Arrayable`\<`string` \| `RegExp`\> \| (`id`, `importer`) => `undefined` \| `null` \| `boolean` \| `void`
 
-Определён в: [options.ts:42](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L42)
+Определён в: [options.ts:47](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L47)
 
 ***
 
@@ -156,7 +164,7 @@ false
 
 > `необязательный` **onSuccess**: `string` \| (`config`) => `void` \| `Promise`\<`void`\>
 
-Определён в: [options.ts:108](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L108)
+Определён в: [options.ts:113](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L113)
 
 Можно указать команду, которая будет выполнена после успешной сборки. Особенно полезно для режима наблюдения (Watch mode).
 
@@ -166,7 +174,7 @@ false
 
 > `необязательный` **outDir**: `string`
 
-Определён в: [options.ts:64](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L64)
+Определён в: [options.ts:69](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L69)
 
 #### По умолчанию
 
@@ -180,7 +188,7 @@ false
 
 > `необязательный` **outExtensions**: `OutExtensionFactory`
 
-Определён в: [options.ts:85](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L85)
+Определён в: [options.ts:90](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L90)
 
 Пользовательские расширения для выходных файлов.
 Опция `fixedExtension` будет переопределена этим параметром.
@@ -191,7 +199,7 @@ false
 
 > `необязательный` **outputOptions**: `OutputOptions` \| (`options`, `format`) => `Awaitable`\<`null` \| `void` \| `OutputOptions`\>
 
-Определён в: [options.ts:87](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L87)
+Определён в: [options.ts:92](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L92)
 
 ***
 
@@ -199,7 +207,7 @@ false
 
 > `необязательный` **platform**: `"node"` \| `"neutral"` \| `"browser"`
 
-Определён в: [options.ts:51](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L51)
+Определён в: [options.ts:56](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L56)
 
 #### По умолчанию
 
@@ -213,7 +221,7 @@ false
 
 > `необязательный` **plugins**: `RolldownPluginOption`\<`any`\>
 
-Определён в: [options.ts:96](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L96)
+Определён в: [options.ts:101](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L101)
 
 ***
 
@@ -221,7 +229,7 @@ false
 
 > `необязательный` **publint**: `boolean` \| `Options`
 
-Определён в: [options.ts:137](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L137)
+Определён в: [options.ts:142](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L142)
 
 Запускает publint после сборки.
 Требует установленного пакета `publint`.
@@ -230,9 +238,9 @@ false
 
 ### report?
 
-> `необязательный` **report**: `boolean`
+> `необязательный` **report**: `boolean` \| `ReportOptions`
 
-Определён в: [options.ts:143](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L143)
+Определён в: [options.ts:148](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L148)
 
 Включает отчёт о размере после сборки.
 
@@ -248,7 +256,7 @@ true
 
 > `необязательный` **shims**: `boolean`
 
-Определён в: [options.ts:72](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L72)
+Определён в: [options.ts:77](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L77)
 
 #### По умолчанию
 
@@ -262,7 +270,7 @@ false
 
 > `необязательный` **silent**: `boolean`
 
-Определён в: [options.ts:98](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L98)
+Определён в: [options.ts:103](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L103)
 
 ***
 
@@ -270,7 +278,7 @@ false
 
 > `необязательный` **skipNodeModulesBundle**: `boolean`
 
-Определён в: [options.ts:113](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L113)
+Определён в: [options.ts:118](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L118)
 
 Пропускает бандлинг node_modules.
 
@@ -280,7 +288,7 @@ false
 
 > `необязательный` **sourcemap**: [`Sourcemap`](./type-aliases/Sourcemap.md)
 
-Определён в: [options.ts:65](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L65)
+Определён в: [options.ts:70](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L70)
 
 ***
 
@@ -288,7 +296,7 @@ false
 
 > `необязательный` **target**: `string` \| `string`[]
 
-Определён в: [options.ts:69](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L69)
+Определён в: [options.ts:74](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L74)
 
 ***
 
@@ -296,7 +304,7 @@ false
 
 > `необязательный` **treeshake**: `boolean`
 
-Определён в: [options.ts:95](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L95)
+Определён в: [options.ts:100](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L100)
 
 #### По умолчанию
 
@@ -310,7 +318,7 @@ true
 
 > `необязательный` **tsconfig**: `string` \| `boolean`
 
-Определён в: [options.ts:49](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L49)
+Определён в: [options.ts:54](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L54)
 
 ***
 
@@ -318,7 +326,7 @@ true
 
 > `необязательный` **unused**: `boolean` \| `Options`
 
-Определён в: [options.ts:131](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L131)
+Определён в: [options.ts:136](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L136)
 
 Включает проверку неиспользуемых зависимостей с помощью `unplugin-unused`.
 Требует установленного пакета `unplugin-unused`.
@@ -329,4 +337,4 @@ true
 
 > `необязательный` **watch**: `string` \| `boolean` \| `string`[]
 
-Определён в: [options.ts:103](https://github.com/rolldown/tsdown/blob/6b9d5005e52e2b4ca6df872be6acc7b9974476c7/src/options.ts#L103)
+Определён в: [options.ts:108](https://github.com/rolldown/tsdown/blob/4b95e82619cbfac9f7af2b67632779e053e54c4a/src/options.ts#L108)

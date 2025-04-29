@@ -32,14 +32,14 @@ const { lang } = useData()
 
     <br />
 
-    <div flex="~ col" items-center v-if="lang === 'ru'">
+    <div flex="~ col" items-center text-center mx10 v-if="lang === 'ru'">
       <p>
         Репозиторий перевода:
         <a class="t-repo-link" href="https://github.com/teplostanski/tsdown.ru"
           >github.com/teplostanski/tsdown.ru</a
         >
       </p>
-      <p>Перевод актуален для версии {{ pkg.version }}</p>
+      <p>Перевод актуален для версии <span text="#ff7e17">{{ pkg.version }}</span></p>
     </div>
   </div>
 </template>
