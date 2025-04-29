@@ -40,7 +40,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm # или pnpm / yarn
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
