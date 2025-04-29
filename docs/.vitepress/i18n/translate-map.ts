@@ -76,7 +76,7 @@ export const ruRU = {
   'Config Options': 'Параметры конфигурации',
   'Command Line Interface': 'Интерфейс командной строки',
 
-  'The Elegant Bundler for Libraries': 'Элегантный упаковщик библиотек',
+  'The Elegant Bundler for Libraries': 'tsdown По-русски | Элегантный сборщик библиотек',
 
   English: 'Русский',
   en: 'ru',

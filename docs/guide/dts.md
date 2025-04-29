@@ -32,6 +32,38 @@ export default defineConfig({
 })
 ```
 
+## Карта деклараций (Declaration Map)
+
+Карты деклараций позволяют сопоставлять файлы `.d.ts` с их исходными `.ts` файлами, что особенно полезно в монорепозиториях для улучшенной навигации и отладки. Подробнее читайте в [документации TypeScript](https://www.typescriptlang.org/tsconfig/#declarationMap).
+
+Включить карты деклараций можно одним из следующих способов (нет необходимости указывать оба):
+
+### Включение в `tsconfig.json`
+
+Включите опцию `declarationMap` в разделе `compilerOptions`:
+
+```json [tsconfig.json]
+{
+  "compilerOptions": {
+    "declarationMap": true
+  }
+}
+```
+
+### Включение в конфиге tsdown
+
+Установите опцию `dts.sourcemap` в значение `true` в вашем конфиге tsdown:
+
+```ts [tsdown.config.ts]
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  dts: {
+    sourcemap: true,
+  },
+})
+```
+
 ## Особенности производительности
 
 Производительность генерации файлов `.d.ts` зависит от конфигурации вашего `tsconfig.json`:
