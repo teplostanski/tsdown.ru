@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: 'tsdown'
+  name: 'tsdown <span class="badge">βeta</span>'
   text: 'Элегантный<br>Сборщик Библиотек'
   tagline: Работает на Rolldown
   image:
@@ -12,13 +12,10 @@ hero:
   actions:
     - theme: brand
       text: Начало работы
-      link: /guide/
+      link: /beta/guide/
     - theme: alt
       text: Справочник API
-      link: /reference/config-options.md
-    - theme: alt
-      text: Бета-версия
-      link: /beta/
+      link: /beta/reference/config-options.md
 
 features:
   - icon: 🚀

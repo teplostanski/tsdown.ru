@@ -24,3 +24,8 @@
 .dark {
   --vp-code-color: #fff;
 }
+
+.badge {
+  font-size: 0.5em;
+  line-height: normal;
+}

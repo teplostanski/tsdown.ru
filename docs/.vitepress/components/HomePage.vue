@@ -1,50 +1,53 @@
-<script setup lang="ts">
-import { useData } from 'vitepress'
-import pkg from '../../../package.json'
-
-const { lang } = useData()
-</script>
-
 <template>
-  <div flex="~ col" items-center justify-center>
-    <div mt20 flex="~ col" items-center gap8>
-      <h2 v-if="lang === 'ru'" class="voidzero-title">Создано</h2>
-      <h2 v-if="lang === 'en'" class="voidzero-title">Brought to you by</h2>
+  <div class="homepage-container">
+    <div class="homepage-block">
+      <h2 class="voidzero-title">Создано</h2>
       <a
-        class="voidzero"
+        class="voidzero homepage-logo"
         href="https://voidzero.dev/"
         target="_blank"
         title="voidzero.dev"
         alt="VoidZero"
-        block
-        h-75px
-        w-300px
       />
-      <h2 v-if="lang === 'zh-CN'" class="voidzero-title">
-        由 VoidZero 隆重推出
-      </h2>
     </div>
 
     <img
-      mt12
+      class="homepage-sponsors"
       src="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.wide.svg"
     />
-
-    <br />
-
-    <div flex="~ col" items-center text-center mx10 v-if="lang === 'ru'">
-      <p>
-        Репозиторий перевода:
-        <a class="t-repo-link" href="https://github.com/teplostanski/tsdown.ru"
-          >github.com/teplostanski/tsdown.ru</a
-        >
-      </p>
-      <p>Перевод актуален для версии <span text="#ff7e17">{{ pkg.version }}</span></p>
-    </div>
   </div>
 </template>
 
 <style scoped>
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.homepage-block {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.homepage-logo {
+  display: block;
+  height: 75px;
+  width: 300px;
+}
+
+.homepage-sponsors {
+  margin-top: 12px;
+}
+
+.homepage-version {
+  color: #ff7e17;
+}
+
 .t-repo-link {
   text-decoration: underline;
   color: #ff7e17;

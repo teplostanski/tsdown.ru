@@ -40,16 +40,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 10 # или нужная тебе версия
+          cache: npm # или pnpm / yarn
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Install dependencies
-        run: pnpm install # или pnpm install / yarn install / bun install
+        run: npm ci # или pnpm install / yarn install / bun install
       - name: Build with VitePress
-        run: pnpm run docs:build # или pnpm docs:build / yarn docs:build / bun run docs:build
+        run: npm run docs:build # или pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -67,3 +64,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        

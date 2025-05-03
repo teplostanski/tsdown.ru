@@ -16,5 +16,6 @@
     "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "exclude": ["**/temp"]
+  "include": ["docs"],
+  "exclude": []
 }
