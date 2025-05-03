@@ -1,6 +1,7 @@
 {
   "name": "tsdown.ru",
   "version": "0.10.2",
+  "type" : "module",
   "scripts": {
     "upd-ver": "node update-version.cjs",
     "docs:dev": "vitepress dev docs",
