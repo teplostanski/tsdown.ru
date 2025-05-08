@@ -1,68 +1,93 @@
-# Интерфейс: Options
+# Interface: Options
 
-Определён в: [options.ts:48](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L48)
+Defined in: [options.ts:50](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L50)
 
-Опции для tsdown.
+Options for tsdown.
 
-## Свойства
+## Properties
 
 ### alias?
 
-> `необязательный` **alias**: `Record`\<`string`, `string`\>
+> `optional` **alias**: `Record`\<`string`, `string`\>
 
-Определён в: [options.ts:58](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L58)
+Defined in: [options.ts:60](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L60)
 
 ***
 
 ### clean?
 
-> `необязательный` **clean**: `boolean` \| `string`[]
+> `optional` **clean**: `boolean` \| `string`[]
 
-Определён в: [options.ts:81](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L81)
+Defined in: [options.ts:85](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L85)
 
-Очищает директории перед сборкой.
+Clean directories before build.
 
-По умолчанию очищается директория вывода.
+Default to output directory.
+
+#### Default
+
+```ts
+true
+```
 
 ***
 
 ### config?
 
-> `необязательный` **config**: `string` \| `boolean`
+> `optional` **config**: `string` \| `boolean`
 
-Определён в: [options.ts:117](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L117)
+Defined in: [options.ts:145](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L145)
 
-Путь к файлу конфигурации
+Config file path
+
+***
+
+### copy?
+
+> `optional` **copy**: `CopyOptions` \| `CopyOptionsFn`
+
+Defined in: [options.ts:223](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L223)
+
+Copy files to another directory.
+
+#### Example
+
+```ts
+[
+  'src/assets',
+  { from: 'src/assets', to: 'dist/assets' },
+]
+```
 
 ***
 
 ### define?
 
-> `необязательный` **define**: `Record`\<`string`, `string`\>
+> `optional` **define**: `Record`\<`string`, `string`\>
 
-Определён в: [options.ts:85](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L85)
+Defined in: [options.ts:112](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L112)
 
 ***
 
 ### dts?
 
-> `необязательный` **dts**: `boolean` \| `Options`
+> `optional` **dts**: `boolean` \| `Options`
 
-Определён в: [options.ts:144](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L144)
+Defined in: [options.ts:174](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L174)
 
-Генерирует файлы деклараций TypeScript (.d.ts).
+Emit TypeScript declaration files (.d.ts).
 
-По умолчанию эта функция определяется автоматически на основе наличия поля `types` в файле `package.json`.
-- Если поле `types` присутствует в `package.json`, генерация файлов деклараций включена.
-- Если поле `types` отсутствует, генерация файлов деклараций по умолчанию отключена.
+By default, this feature is auto-detected based on the presence of the `types` field in the `package.json` file.
+- If the `types` field is present in `package.json`, declaration file emission is enabled.
+- If the `types` field is absent, declaration file emission is disabled by default.
 
 ***
 
 ### entry?
 
-> `необязательный` **entry**: `InputOption`
+> `optional` **entry**: `InputOption`
 
-Определён в: [options.ts:50](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L50)
+Defined in: [options.ts:52](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L52)
 
 ***
 
@@ -70,11 +95,11 @@
 
 > `optional` **env**: `Record`\<`string`, `any`\>
 
-Определён в: [options.ts:174](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L174)
+Defined in: [options.ts:206](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L206)
 
-Переменные окружения, задаваемые на этапе компиляции.
+Compile-time env variables.
 
-#### Пример
+#### Example
 
 ```json
 {
@@ -87,23 +112,23 @@
 
 ### external?
 
-> `необязательный` **external**: `ExternalOption`
+> `optional` **external**: `ExternalOption`
 
-Определён в: [options.ts:51](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L51)
+Defined in: [options.ts:53](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L53)
 
 ***
 
 ### fixedExtension?
 
-> `необязательный` **fixedExtension**: `boolean`
+> `optional` **fixedExtension**: `boolean`
 
-Определён в: [options.ts:95](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L95)
+Defined in: [options.ts:122](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L122)
 
-Использует фиксированное расширение для выходных файлов.
-Расширение всегда будет `.cjs` или `.mjs`.
-В противном случае оно будет зависеть от типа пакета.
+Use a fixed extension for output files.
+The extension will always be `.cjs` or `.mjs`.
+Otherwise, it will depend on the package type.
 
-#### По умолчанию
+#### Default
 
 ```ts
 false
@@ -113,27 +138,27 @@ false
 
 ### format?
 
-> `необязательный` **format**: [`Format`](./type-aliases/Format.md) \| [`Format`](./type-aliases/Format.md)[]
+> `optional` **format**: [`Format`](./type-aliases/Format.md) \| [`Format`](./type-aliases/Format.md)[]
 
-Определён в: [options.ts:71](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L71)
+Defined in: [options.ts:73](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L73)
 
-#### По умолчанию
+#### Default
 
 ```ts
-'es'
+['es']
 ```
 
 ***
 
 ### fromVite?
 
-> `необязательный` **fromVite**: `boolean` \| `"vitest"`
+> `optional` **fromVite**: `boolean` \| `"vitest"`
 
-Определён в: [options.ts:134](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L134)
+Defined in: [options.ts:164](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L164)
 
-Повторно использует конфиг из Vite или Vitest (экспериментально)
+Reuse config from Vite or Vitest (experimental)
 
-#### По умолчанию
+#### Default
 
 ```ts
 false
@@ -143,35 +168,35 @@ false
 
 ### globalName?
 
-> `необязательный` **globalName**: `string`
+> `optional` **globalName**: `string`
 
-Определён в: [options.ts:72](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L72)
+Defined in: [options.ts:74](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L74)
 
 ***
 
 ### hooks?
 
-> `необязательный` **hooks**: `Partial`\<`TsdownHooks`\> \| (`hooks`) => `Awaitable`\<`void`\>
+> `optional` **hooks**: `Partial`\<`TsdownHooks`\> \| (`hooks`) => `Awaitable`\<`void`\>
 
-Определён в: [options.ts:176](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L176)
+Defined in: [options.ts:225](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L225)
 
 ***
 
 ### inputOptions?
 
-> `необязательный` **inputOptions**: `InputOptions` \| (`options`, `format`) => `Awaitable`\<`null` \| `void` \| `InputOptions`\>
+> `optional` **inputOptions**: `InputOptions` \| (`options`, `format`) => `Awaitable`\<`null` \| `void` \| `InputOptions`\>
 
-Определён в: [options.ts:62](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L62)
+Defined in: [options.ts:64](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L64)
 
 ***
 
 ### minify?
 
-> `необязательный` **minify**: `boolean` \| `BindingMinifyOptions` \| `"dce-only"`
+> `optional` **minify**: `boolean` \| `BindingMinifyOptions` \| `"dce-only"`
 
-Определён в: [options.ts:83](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L83)
+Defined in: [options.ts:87](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L87)
 
-#### По умолчанию
+#### Default
 
 ```ts
 false
@@ -181,29 +206,29 @@ false
 
 ### noExternal?
 
-> `необязательный` **noExternal**: `Arrayable`\<`string` \| `RegExp`\> \| (`id`, `importer`) => `undefined` \| `null` \| `boolean` \| `void`
+> `optional` **noExternal**: `Arrayable`\<`string` \| `RegExp`\> \| (`id`, `importer`) => `undefined` \| `null` \| `boolean` \| `void`
 
-Определён в: [options.ts:52](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L52)
+Defined in: [options.ts:54](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L54)
 
 ***
 
 ### onSuccess?
 
-> `необязательный` **onSuccess**: `string` \| (`config`) => `void` \| `Promise`\<`void`\>
+> `optional` **onSuccess**: `string` \| (`config`) => `void` \| `Promise`\<`void`\>
 
-Определён в: [options.ts:123](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L123)
+Defined in: [options.ts:152](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L152)
 
-Можно указать команду, которая будет выполнена после успешной сборки. Особенно полезно для режима наблюдения (Watch mode).
+You can specify command to be executed after a successful build, specially useful for Watch mode
 
 ***
 
 ### outDir?
 
-> `необязательный` **outDir**: `string`
+> `optional` **outDir**: `string`
 
-Определён в: [options.ts:74](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L74)
+Defined in: [options.ts:76](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L76)
 
-#### По умолчанию
+#### Default
 
 ```ts
 'dist'
@@ -213,30 +238,30 @@ false
 
 ### outExtensions?
 
-> `необязательный` **outExtensions**: `OutExtensionFactory`
+> `optional` **outExtensions**: `OutExtensionFactory`
 
-Определён в: [options.ts:100](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L100)
+Defined in: [options.ts:127](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L127)
 
-Пользовательские расширения для выходных файлов.
-Опция `fixedExtension` будет переопределена этим параметром.
+Custom extensions for output files.
+`fixedExtension` will be overridden by this option.
 
 ***
 
 ### outputOptions?
 
-> `необязательный` **outputOptions**: `OutputOptions` \| (`options`, `format`) => `Awaitable`\<`null` \| `void` \| `OutputOptions`\>
+> `optional` **outputOptions**: `OutputOptions` \| (`options`, `format`) => `Awaitable`\<`null` \| `void` \| `OutputOptions`\>
 
-Определён в: [options.ts:102](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L102)
+Defined in: [options.ts:129](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L129)
 
 ***
 
 ### platform?
 
-> `необязательный` **platform**: `"node"` \| `"neutral"` \| `"browser"`
+> `optional` **platform**: `"node"` \| `"neutral"` \| `"browser"`
 
-Определён в: [options.ts:61](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L61)
+Defined in: [options.ts:63](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L63)
 
-#### По умолчанию
+#### Default
 
 ```ts
 'node'
@@ -246,32 +271,73 @@ false
 
 ### plugins?
 
-> `необязательный` **plugins**: `RolldownPluginOption`\<`any`\>
+> `optional` **plugins**: `RolldownPluginOption`\<`any`\>
 
-Определён в: [options.ts:111](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L111)
+Defined in: [options.ts:138](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L138)
+
+***
+
+### ~~publicDir?~~
+
+> `optional` **publicDir**: `CopyOptions` \| `CopyOptionsFn`
+
+Defined in: [options.ts:211](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L211)
+
+#### Deprecated
+
+Alias for `copy`, will be removed in the future.
 
 ***
 
 ### publint?
 
-> `необязательный` **publint**: `boolean` \| `Options`
+> `optional` **publint**: `boolean` \| `Options`
 
-Определён в: [options.ts:156](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L156)
+Defined in: [options.ts:188](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L188)
 
-Запускает publint после сборки.
-Требует установленного пакета `publint`.
+Run publint after bundling.
+Requires `publint` to be installed.
+
+#### Default
+
+```ts
+false
+```
+
+***
+
+### removeNodeProtocol?
+
+> `optional` **removeNodeProtocol**: `boolean`
+
+Defined in: [options.ts:238](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L238)
+
+If enabled, strips the `node:` protocol prefix from import source.
+
+#### Default
+
+```ts
+false
+```
+
+#### Example
+
+```ts
+// With removeNodeProtocol enabled:
+import('node:fs'); // becomes import('fs')
+```
 
 ***
 
 ### report?
 
-> `необязательный` **report**: `boolean` \| `ReportOptions`
+> `optional` **report**: `boolean` \| `ReportOptions`
 
-Определён в: [options.ts:162](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L162)
+Defined in: [options.ts:194](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L194)
 
-Включает отчёт о размере после сборки.
+Enable size reporting after bundling.
 
-#### По умолчанию
+#### Default
 
 ```ts
 true
@@ -281,11 +347,11 @@ true
 
 ### shims?
 
-> `необязательный` **shims**: `boolean`
+> `optional` **shims**: `boolean`
 
-Определён в: [options.ts:87](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L87)
+Defined in: [options.ts:114](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L114)
 
-#### По умолчанию
+#### Default
 
 ```ts
 false
@@ -295,45 +361,86 @@ false
 
 ### silent?
 
-> `необязательный` **silent**: `boolean`
+> `optional` **silent**: `boolean`
 
-Определён в: [options.ts:113](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L113)
+Defined in: [options.ts:141](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L141)
+
+#### Default
+
+```ts
+false
+```
 
 ***
 
 ### skipNodeModulesBundle?
 
-> `необязательный` **skipNodeModulesBundle**: `boolean`
+> `optional` **skipNodeModulesBundle**: `boolean`
 
-Определён в: [options.ts:128](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L128)
+Defined in: [options.ts:158](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L158)
 
-Пропускает бандлинг node_modules.
+Skip bundling `node_modules`.
+
+#### Default
+
+```ts
+false
+```
 
 ***
 
 ### sourcemap?
 
-> `необязательный` **sourcemap**: [`Sourcemap`](./type-aliases/Sourcemap.md)
+> `optional` **sourcemap**: [`Sourcemap`](./type-aliases/Sourcemap.md)
 
-Определён в: [options.ts:75](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L75)
+Defined in: [options.ts:78](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L78)
+
+#### Default
+
+```ts
+false
+```
 
 ***
 
 ### target?
 
-> `необязательный` **target**: `string` \| `string`[]
+> `optional` **target**: `string` \| `string`[]
 
-Определён в: [options.ts:84](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L84)
+Defined in: [options.ts:110](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L110)
+
+Specifies the compilation target environment(s).
+
+Determines the JavaScript version or runtime(s) for which the code should be compiled.
+If not set, defaults to the value of `engines.node` in your project's `package.json`.
+
+Accepts a single target (e.g., `'es2020'`, `'node18'`) or an array of targets.
+
+#### See
+
+[https://tsdown.dev/guide/target#supported-targets](https://tsdown.dev/guide/target#supported-targets) for a list of valid targets and more details.
+
+#### Examples
+
+```jsonc
+// Target a single environment
+{ "target": "node18" }
+```
+
+```jsonc
+// Target multiple environments
+{ "target": ["node18", "es2020"] }
+```
 
 ***
 
 ### treeshake?
 
-> `необязательный` **treeshake**: `boolean`
+> `optional` **treeshake**: `boolean`
 
-Определён в: [options.ts:110](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L110)
+Defined in: [options.ts:137](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L137)
 
-#### По умолчанию
+#### Default
 
 ```ts
 true
@@ -343,25 +450,37 @@ true
 
 ### tsconfig?
 
-> `необязательный` **tsconfig**: `string` \| `boolean`
+> `optional` **tsconfig**: `string` \| `boolean`
 
-Определён в: [options.ts:59](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L59)
+Defined in: [options.ts:61](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L61)
 
 ***
 
 ### unused?
 
-> `необязательный` **unused**: `boolean` \| `Options`
+> `optional` **unused**: `boolean` \| `Options`
 
-Определён в: [options.ts:150](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L150)
+Defined in: [options.ts:181](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L181)
 
-Включает проверку неиспользуемых зависимостей с помощью `unplugin-unused`.
-Требует установленного пакета `unplugin-unused`.
+Enable unused dependencies check with `unplugin-unused`
+Requires `unplugin-unused` to be installed.
+
+#### Default
+
+```ts
+false
+```
 
 ***
 
 ### watch?
 
-> `необязательный` **watch**: `string` \| `boolean` \| `string`[]
+> `optional` **watch**: `string` \| `boolean` \| `string`[]
 
-Определён в: [options.ts:118](https://github.com/rolldown/tsdown/blob/6f00871acd7aada2e6f895db2db913b1dbe12c29/src/options.ts#L118)
+Defined in: [options.ts:147](https://github.com/rolldown/tsdown/blob/0f71a8dc0229b7ba9c44a19dc9cf6d7c3566fca2/src/options.ts#L147)
+
+#### Default
+
+```ts
+false
+```

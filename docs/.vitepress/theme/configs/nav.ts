@@ -6,10 +6,10 @@ const navVersion = [
     text: `v${v.latest}`,
     link: "/",
   },
-  {
-    text: `v${v.beta}${v.beta_suffix}`,
-    link: "/beta/",
-  },
+  //{
+  //  text: `v${v.beta}${v.beta_suffix}`,
+  //  link: "/beta/",
+  //},
 ]
 
 export function nav(prefix: string): DefaultTheme.Config["nav"] {
@@ -24,6 +24,7 @@ export function nav(prefix: string): DefaultTheme.Config["nav"] {
           link: `${prefix}/reference/config-options`,
           activeMatch: `${prefix}/reference/`,
         },
+        { text: 'FAQ', link: `${prefix}/guide/faq.md` },
       ],
     },
     {

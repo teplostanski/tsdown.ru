@@ -16,9 +16,9 @@ hero:
     - theme: alt
       text: Справочник API
       link: /reference/config-options.md
-    - theme: alt
-      text: Бета-версия
-      link: /beta/
+    #- theme: alt
+      #text: Бета-версия
+      #link: /beta/
 
 features:
   - icon: 🚀

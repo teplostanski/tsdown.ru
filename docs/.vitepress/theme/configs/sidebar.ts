@@ -47,6 +47,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
             { text: "Опции Rolldown", link: "/rolldown-options" },
           ],
         },
+        { text: "FAQ", link: "/faq" },
       ],
     },
     {
@@ -57,5 +58,5 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: "Интерфейс командной строки", link: "/cli" },
       ],
     },
-  ]
+  ];
 }
