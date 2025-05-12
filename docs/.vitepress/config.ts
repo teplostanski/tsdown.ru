@@ -5,8 +5,10 @@ import { sidebar, nav } from "./theme/configs";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "tsdown",
+  description: "tsdown По-русски | Элегантный сборщик библиотек",
   lastUpdated: true,
   cleanUrls: true,
+  lang: 'ru-RU',
   sitemap: {
     hostname: 'https://tsdown.ru'
   },
