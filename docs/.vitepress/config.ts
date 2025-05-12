@@ -7,7 +7,9 @@ export default defineConfig({
   title: "tsdown",
   lastUpdated: true,
   cleanUrls: true,
-
+  sitemap: {
+    hostname: 'https://tsdown.ru'
+  },
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/tsdown.svg" }],
     ["meta", { name: "theme-color", content: "#ff7e17" }],
