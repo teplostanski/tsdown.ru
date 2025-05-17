@@ -149,7 +149,7 @@ tsdown --env.NODE_ENV=production
 
 Обратите внимание, что переменные окружения, определённые с помощью `--env.VAR_NAME`, могут быть доступны только как `import.meta.env.VAR_NAME` или `process.env.VAR_NAME`.
 
-## `--debug [scope]`
+## `--debug [feat]`
 
 Показывает отладочные логи.
 
