@@ -129,6 +129,10 @@ tsdown --tsconfig tsconfig.build.json
 
 См. также [Режим наблюдения (Watch Mode)](../options/watch-mode.md).
 
+## `--ignore-watch <path>`
+
+Игнорирует указанные пути в режиме наблюдения.
+
 ## `--from-vite [vitest]`
 
 Повторно использует конфигурацию из Vite или Vitest. Позволяет расширять или интегрировать существующие конфиги Vite или Vitest.
