@@ -52,6 +52,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: "Плагины", link: "/plugins" },
         { text: "Хуки", link: "/hooks" },
         { text: "Опции Rolldown", link: "/rolldown-options" },
+        { text: 'Использование в коде', link: '/programmatic-usage' },
       ],
     },
     {
