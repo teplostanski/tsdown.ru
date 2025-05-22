@@ -38,6 +38,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: "Минификация", link: "/minification" },
         { text: "Тихий режим (Silent Mode)", link: "/silent-mode" },
         { text: "Прослойки (Shims)", link: "/shims" },
+        { text: "Автоэкспорты", link: "/package-exports" },
       ],
     },
     {

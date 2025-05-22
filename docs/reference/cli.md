@@ -179,3 +179,9 @@ tsdown --copy public
 
 Псевдоним для `--copy`.
 **Устарело:** Пожалуйста, используйте вместо этого `--copy` для большей ясности и согласованности.
+
+## `--exports`
+
+Генерирует поля `exports`, `main`, `module` и `types` в вашем `package.json`.
+
+См. также [Автоэкспорты](../options/package-exports.md).
