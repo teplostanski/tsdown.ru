@@ -13,7 +13,7 @@ export default defineConfig({
     hostname: 'https://tsdown.ru'
   },
   head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/tsdown.svg" }],
+    ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
     ["meta", { name: "theme-color", content: "#ff7e17" }],
     ["meta", { property: "og:title", content: "tsdown" }],
     [
