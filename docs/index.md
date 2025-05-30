@@ -10,6 +10,8 @@ hero:
     src: /tsdown.svg
     alt: tsdown
   actions:
+    - text: Что такое tsdown?
+      openVideoModal: true
     - theme: brand
       text: Начало работы
       link: /guide/

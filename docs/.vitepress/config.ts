@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from "vitepress";
 import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
 import { sidebar, nav } from "./theme/configs";
@@ -101,6 +102,19 @@ export default defineConfig({
   markdown: {
     config(md) {
       md.use(groupIconMdPlugin);
+    },
+  },
+  
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPHero\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/overrides/vp-hero.vue', import.meta.url),
+          ),
+        },
+      ],
     },
   },
 });
