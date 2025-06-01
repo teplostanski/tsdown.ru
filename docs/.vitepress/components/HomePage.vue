@@ -11,10 +11,12 @@
       />
     </div>
 
-    <img
-      class="homepage-sponsors"
-      src="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.wide.svg"
-    />
+    <div class="homepage-sponsors">
+      <img
+        src="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.wide.svg"
+        alt="Sponsors"
+      />
+    </div>
   </div>
 </template>
 

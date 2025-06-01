@@ -7,12 +7,24 @@ const navVersion = [
     link: "/",
   },
   //{
-  //  text: `v${v.beta}${v.beta_suffix}`,
-  //  link: "/beta/",
+  //  text: `v${v.prerelease}${v.prerelease_suffix}`,
+  //  link: "/_beta/",
   //},
 ]
 
 export function nav(prefix: string): DefaultTheme.Config["nav"] {
+  const versionNav: DefaultTheme.NavItem = navVersion.length === 1
+    ?     {
+      text: navVersion[0].text,
+      link: "https://github.com/rolldown/tsdown/releases/tag/" + navVersion[0].text,
+    }
+    : {
+        component: "NavVersion",
+        props: {
+          versions: navVersion,
+        },
+      };
+
   return [
     {
       text: "Навигация",
@@ -31,11 +43,6 @@ export function nav(prefix: string): DefaultTheme.Config["nav"] {
       text: "Репозиторий перевода",
       link: "https://github.com/teplostanski/tsdown.ru/",
     },
-    {
-      component: "NavVersion",
-      props: {
-        versions: navVersion,
-      },
-    },
+    versionNav,
   ];
 } 
