@@ -2,6 +2,13 @@
 
 # 🇷🇺 Русскоязычная документация <br> tsdown [![npm](https://img.shields.io/npm/v/tsdown.svg)](https://npmjs.com/package/tsdown) [![Unit Test](https://github.com/rolldown/tsdown/actions/workflows/tests.yml/badge.svg)](https://github.com/rolldown/tsdown/actions/workflows/tests.yml) [![JSR](https://jsr.io/badges/@sxzz/tsdown)](https://jsr.io/@sxzz/tsdown) [![tsdown-starter-stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/rolldown/tsdown-starter-stackblitz)
 
+> ⚠️ **Важно**: Это **неофициальный** перевод документации [`tsdown`](https://github.com/rolldown/tsdown/), поддерживаемый сообществом. 
+> Официальная документация: [tsdown.dev](https://tsdown.dev).
+
+## О переводе
+
+Этот репозиторий содержит русский перевод документации [`tsdown`](https://github.com/rolldown/tsdown/). Перевод поддерживается сообществом и **не является официальным**.
+
 ✨ Элегантный сборщик для библиотек, работающий на [Rolldown](https://github.com/rolldown/rolldown).
 
 ## Возможности
