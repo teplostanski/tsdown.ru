@@ -2,6 +2,7 @@
 
 # 🇷🇺 Русскоязычная документация <br> tsdown [![npm](https://img.shields.io/npm/v/tsdown.svg)](https://npmjs.com/package/tsdown) [![Unit Test](https://github.com/rolldown/tsdown/actions/workflows/tests.yml/badge.svg)](https://github.com/rolldown/tsdown/actions/workflows/tests.yml) [![JSR](https://jsr.io/badges/@sxzz/tsdown)](https://jsr.io/@sxzz/tsdown) [![tsdown-starter-stackblitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/rolldown/tsdown-starter-stackblitz)
 
+> [!IMPORTANT]
 > ⚠️ **Важно**: Это **неофициальный** перевод документации [`tsdown`](https://github.com/rolldown/tsdown/), поддерживаемый сообществом. 
 > Официальная документация: [tsdown.dev](https://tsdown.dev).
 
