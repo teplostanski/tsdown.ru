@@ -1,6 +1,6 @@
 # Interface: Workspace
 
-Defined in: [types.ts:47](https://github.com/rolldown/tsdown/blob/b2453d085741771a389c70fb326a0e04a8352056/src/options/types.ts#L47)
+Defined in: [types.ts:47](https://github.com/rolldown/tsdown/blob/419a6536f1671d2892a29dad749cebb3cc09b852/src/options/types.ts#L47)
 
 ## Properties
 
@@ -8,7 +8,7 @@ Defined in: [types.ts:47](https://github.com/rolldown/tsdown/blob/b2453d08574177
 
 > `optional` **config**: `string` \| `boolean`
 
-Defined in: [types.ts:63](https://github.com/rolldown/tsdown/blob/b2453d085741771a389c70fb326a0e04a8352056/src/options/types.ts#L63)
+Defined in: [types.ts:63](https://github.com/rolldown/tsdown/blob/419a6536f1671d2892a29dad749cebb3cc09b852/src/options/types.ts#L63)
 
 Path to the workspace configuration file.
 
@@ -18,7 +18,7 @@ Path to the workspace configuration file.
 
 > `optional` **exclude**: `Arrayable`\<`string`\>
 
-Defined in: [types.ts:58](https://github.com/rolldown/tsdown/blob/b2453d085741771a389c70fb326a0e04a8352056/src/options/types.ts#L58)
+Defined in: [types.ts:58](https://github.com/rolldown/tsdown/blob/419a6536f1671d2892a29dad749cebb3cc09b852/src/options/types.ts#L58)
 
 Exclude directories from workspace.
 Defaults to all `node_modules`, `dist`, `test`, `tests`, `temp`, and `tmp` directories.
@@ -29,7 +29,7 @@ Defaults to all `node_modules`, `dist`, `test`, `tests`, `temp`, and `tmp` direc
 
 > `optional` **include**: `Arrayable`\<`string`\>
 
-Defined in: [types.ts:53](https://github.com/rolldown/tsdown/blob/b2453d085741771a389c70fb326a0e04a8352056/src/options/types.ts#L53)
+Defined in: [types.ts:53](https://github.com/rolldown/tsdown/blob/419a6536f1671d2892a29dad749cebb3cc09b852/src/options/types.ts#L53)
 
 Workspace directories. Glob patterns are supported.
 - `auto`: Automatically detect `package.json` files in the workspace.
