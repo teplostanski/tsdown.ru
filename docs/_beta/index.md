@@ -15,7 +15,7 @@ hero:
       link: /beta/guide/
     - theme: alt
       text: Справочник API
-      link: /beta/reference/config-options.md
+      link: /beta/reference/api/Interface.Options.md
 
 features:
   - icon: 🚀

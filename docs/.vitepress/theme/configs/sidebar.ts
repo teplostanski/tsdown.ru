@@ -62,8 +62,15 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
       text: "Справочник API",
       base: `${prefix}/reference`,
       items: [
-        { text: "Параметры конфигурации", link: "/config-options" },
         { text: "Интерфейс командной строки", link: "/cli" },
+        {
+          text: "Параметры конфигурации",
+          link: "/api/Interface.Options",
+        },
+        {
+          text: "Определения типов",
+          link: "/api/Type.Definitions"
+        },
       ],
     },
   ];

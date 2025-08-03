@@ -33,7 +33,7 @@ export function nav(prefix: string): DefaultTheme.Config["nav"] {
         { text: "Руководство", link: `${prefix}/guide/`, activeMatch: `${prefix}/guide/` },
         {
           text: "Справочник API",
-          link: `${prefix}/reference/config-options`,
+          link: `${prefix}/reference/api/Interface.Options`,
           activeMatch: `${prefix}/reference/`,
         },
         { text: 'FAQ', link: `${prefix}/guide/faq.md` },
