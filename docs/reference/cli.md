@@ -39,6 +39,8 @@ tsdown --tsconfig tsconfig.build.json
 - `esm` (ECMAScript Modules)
 - `cjs` (CommonJS)
 - `iife` (Immediately Invoked Function Expression)
+- `umd` (Универсальный модульный стандарт)
+
 
 См. также [Формат вывода](../options/output-format.md).
 
