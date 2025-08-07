@@ -12,6 +12,8 @@ tsdown --format esm # по умолчанию
 - [`cjs`](https://nodejs.org/api/modules.html): формат CommonJS, часто используемый в проектах Node.js.
 - [`iife`](https://developer.mozilla.org/ru/docs/Glossary/IIFE): Immediately Invoked Function Expression (немедленно вызываемое функциональное выражение), подходит для встраивания в теги `<script>` или автономного использования в браузере.
 
+- [`umd`](https://github.com/umdjs/umd): Универсальный модульный стандарт, подходящий для работы с AMD, CommonJS и глобальными переменными.
+
 ### Пример
 
 ```bash
