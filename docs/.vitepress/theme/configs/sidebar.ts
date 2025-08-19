@@ -40,12 +40,16 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: "Прослойки (Shims)", link: "/shims" },
         { text: "Автоэкспорты", link: "/package-exports" },
         { text: "Сборка без объединения (Unbundle)", link: "/unbundle" },
+        { text: "CJS экспорт по умолчанию", link: "/cjs-default" },
       ],
     },
     {
       text: "Рецепты",
       base: `${prefix}/recipes`,
-      items: [{ text: "Поддержка Vue", link: "/vue-support" }],
+      items: [
+        { text: "Поддержка Vue", link: "/vue-support" },
+        { text: "Поддержка React", link: "/react-support" }
+      ],
     },
     {
       text: "Продвинутые возможности",
