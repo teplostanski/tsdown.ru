@@ -16,7 +16,8 @@
 Файл конфигурации позволяет определять и настраивать параметры сборки централизованно и с возможностью повторного использования. Ниже приведен простой пример файла конфигурации `tsdown`:
 
 ```ts
-import { defineConfig } from 'tsdown/config'
+import { defineConfig } from 'tsdown'
+
 export default defineConfig({
   entry: 'src/index.ts',
 })
@@ -27,6 +28,8 @@ export default defineConfig({
 `tsdown` также поддерживает возврат **массива конфигураций** из файла конфигурации. Это позволяет создавать несколько выходных файлов с разными настройками за один запуск. Например:
 
 ```ts
+import { defineConfig } from 'tsdown'
+
 export default defineConfig([
   {
     entry: 'src/entry1.ts',
