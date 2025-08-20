@@ -40,10 +40,10 @@ export const MyButton: React.FC<MyButtonProps> = ({ type }) => {
 }
 ```
 
-И импортируйте его в вашем входном файле:
+И экспортируйте его в вашем входном файле:
 
 ```ts [index.ts]
-import { MyButton } from './MyButton'
+export { MyButton } from './MyButton'
 ```
 
 ::: warning
