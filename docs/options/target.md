@@ -77,54 +77,6 @@ tsdown --target es2020
 tsdown --target chrome100 --target node20.18
 ```
 
-## Вспомогательные модули (runtime helpers)
-
-Когда `tsdown` преобразует новые возможности JavaScript для поддержки старых сред, он может использовать хелперы из пакета `@oxc-project/runtime`. Например, для работы с `await` нужен хелпер `@oxc-project/runtime/helpers/asyncToGenerator`.
-
-Если ваш target включает такие возможности, возможно, потребуется установить пакет `@oxc-project/runtime` в проект:
-
-::: code-group
-
-```sh [npm]
-npm install @oxc-project/runtime
-```
-
-```sh [pnpm]
-pnpm add @oxc-project/runtime
-```
-
-```sh [yarn]
-yarn add @oxc-project/runtime
-```
-
-```sh [bun]
-bun add @oxc-project/runtime
-```
-
-:::
-
-Если вы хотите **встраивать вспомогательные функции** вместо их импорта из пакета runtime, вы можете установить `@oxc-project/runtime` как зависимость для разработки:
-
-::: code-group
-
-```sh [npm]
-npm install -D @oxc-project/runtime
-```
-
-```sh [pnpm]
-pnpm add -D @oxc-project/runtime
-```
-
-```sh [yarn]
-yarn add -D @oxc-project/runtime
-```
-
-```sh [bun]
-bun add -D @oxc-project/runtime
-```
-
-:::
-
 # Адаптация CSS
 
 `tsdown` также может адаптировать возможности CSS под указанные версии браузеров. Например, вложенный селектор CSS с `&` будет преобразован в плоскую структуру, если целевой браузер `chrome108` или старше.
