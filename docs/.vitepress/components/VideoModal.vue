@@ -1,6 +1,17 @@
 <script setup lang="ts">
 import { onKeyStroke } from '@vueuse/core'
+import { useData } from 'vitepress'
 import { watch } from 'vue'
+
+defineProps<{
+  text: string
+}>()
+defineOptions({
+  inheritAttrs: false,
+})
+
+const { lang } = useData()
+
 
 // SOURCE: https://github.com/rolldown/rolldown/blob/main/docs/.vitepress/theme/components/RolldownVideoModal.vue
 
@@ -12,7 +23,7 @@ const isModalVisible = defineModel({ default: false })
 watch(
   isModalVisible,
   (value) => {
-     if (!globalThis.document) return
+    if (!globalThis.document) return
 
     const newOverflowValue = value ? 'hidden' : 'auto'
     document.documentElement.style.overflow = newOverflowValue
@@ -37,7 +48,7 @@ onKeyStroke('Escape', () => {
 
 <template>
   <button class="open-modal-button" @click="openModal">
-    Что такое tsdown?
+    {{ text }}
     <svg
       class="icon-play"
       aria-labelledby="simpleicons-play-icon"
@@ -66,7 +77,7 @@ onKeyStroke('Escape', () => {
         <div class="modal-content">
           <iframe
             class="video-iframe"
-            :src="`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&modestbranding=1&rel=0`"
+            :src="`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&cc_load_policy=1&cc_lang_pref=${lang}&hl=${lang}`"
             title="YouTube video player"
             frameborder="0"
             allow="autoplay; picture-in-picture"

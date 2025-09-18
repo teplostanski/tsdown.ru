@@ -1,6 +1,6 @@
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitepress";
-import { groupIconMdPlugin } from "vitepress-plugin-group-icons";
+import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import { sidebar, nav } from "./theme/configs";
 
 // https://vitepress.dev/reference/site-config
@@ -9,9 +9,9 @@ export default defineConfig({
   description: "tsdown По-русски | Элегантный сборщик библиотек",
   lastUpdated: true,
   cleanUrls: true,
-  lang: 'ru-RU',
+  lang: "ru",
   sitemap: {
-    hostname: 'https://tsdown.ru'
+    hostname: "https://tsdown.ru",
   },
   head: [
     ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
@@ -46,8 +46,8 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     logo: { src: "/tsdown.svg", width: 24, height: 24 },
-    nav: nav(''),
-    sidebar: sidebar(''),
+    nav: nav(""),
+    sidebar: sidebar(""),
     outline: {
       label: "Навигация по странице",
       level: "deep",
@@ -104,18 +104,18 @@ export default defineConfig({
       md.use(groupIconMdPlugin);
     },
   },
-  
+
   vite: {
     resolve: {
       alias: [
         {
           find: /^.*\/VPHero\.vue$/,
           replacement: fileURLToPath(
-            new URL('./components/overrides/vp-hero.vue', import.meta.url),
+            new URL("./components/overrides/vp-hero.vue", import.meta.url)
           ),
         },
       ],
     },
+    plugins: [groupIconVitePlugin()],
   },
 });
-
