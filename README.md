@@ -7,7 +7,11 @@
 [![Unit Test][unit-test-src]][unit-test-href]
 [![tsdown Starter StackBlitz][tsdown-starter-stackblitz-src]][tsdown-starter-stackblitz-href]
 
-✨ Элегантный сборщик для библиотек, работающий на [Rolldown](https://github.com/rolldown/rolldown).
+✨ Элегантный сборщик для библиотек, работающий на Rolldown.
+
+**Документация на русском: [tsdown.ru](https://tsdown.ru)**
+
+**Официальный репозиторий: [github.com/rolldown/tsdown](https://github.com/rolldown/tsdown/)**
 
 > [!IMPORTANT]
 > ⚠️ **Важно**: Это **неофициальный** перевод документации [tsdown](https://github.com/rolldown/tsdown/), поддерживаемый сообществом. 
@@ -17,7 +21,7 @@
 
 <div>
   <a href="https://donate.teplostan.ski" target="_blank">
-    <img src="https://gist.githubusercontent.com/teplostanski/efecc707d47591fec971de00e9860d2f/raw/5581a84ee1c4b6c335b4df19f96f8e7af97a1ae2/SUPPORTME.svg">
+    <img src="https://src.teplostan.ski/support-the-project.svg">
   </a>
 </div>
 
