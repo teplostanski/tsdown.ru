@@ -28,7 +28,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
           link: "/dependencies",
         },
         { text: "Режим наблюдения (Watch Mode)", link: "/watch-mode" },
-        { text: "Цель (Target)", link: "/target" },
+        { text: "Целевая платформа (Target)", link: "/target" },
         { text: "Платформа", link: "/platform" },
         { text: "Tree-shaking", link: "/tree-shaking" },
         {

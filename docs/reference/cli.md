@@ -68,8 +68,12 @@ tsdown --tsconfig tsconfig.build.json
 
 - `es2015`
 - `esnext`
+- `chrome100`
+- `node18`
 
-См. также [Цель (Target)](../options/target.md).
+Отключить все преобразования синтаксиса можно также через флаг `--no-target` или установив target в `false` в конфигурационном файле.
+
+См. также [Целевая платформа (Target)](../options/target.md).
 
 ## `--silent`
 

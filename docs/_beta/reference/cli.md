@@ -67,7 +67,7 @@ tsdown --tsconfig tsconfig.build.json
 - `es2015`
 - `esnext`
 
-См. также [Цель (Target)](../options/target.md).
+См. также [Целевая платформа (Target)](../options/target.md).
 
 ## `--silent`
 

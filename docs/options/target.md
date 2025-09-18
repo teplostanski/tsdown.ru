@@ -1,4 +1,4 @@
-# Цель (Target)
+# Целевая платформа (Target)
 
 Параметр `target` определяет, какие возможности JavaScript и CSS будут понижены (преобразованы в более старый синтаксис), а какие останутся без изменений в итоговом коде. Это позволяет контролировать совместимость собранного кода с определёнными окружениями или версиями JavaScript.
 
@@ -25,12 +25,38 @@
 
 Если вы хотите переопределить это поведение, вы можете явно указать значение target с помощью CLI или конфигурационного файла.
 
+## Отключение преобразований целевой платформы
+
+Чтобы полностью отключить преобразования синтаксиса, установите параметр target в `false`. Это позволит сохранить современный код JavaScript и CSS в исходном виде, игнорируя требования среды выполнения из `package.json`.
+
+```json
+{
+  "target": false
+}
+```
+
+Что происходит при `target: false`:
+
+- Современный JavaScript остается без изменений (optional chaining `?.`, nullish coalescing `??` и прочие новые возможности)
+- CSS код не адаптируется под старые браузеры (включая современные возможности вроде нативной вложенности)
+- Дополнительные полифиллы и хелперы не подключаются
+- Финальный код идентичен исходному
+
+Когда это нужно:
+
+- Разработка для современных браузеров и сред выполнения
+- Преобразования выполняются на других этапах сборки
+- Создание библиотек, которые будут обрабатываться в финальном приложении
+
+> [!NOTE] Поведение по умолчанию
+> Если не задать `target` и в `package.json` нет секции `engines.node`, tsdown автоматически работает в режиме `target: false`, оставляя весь код без преобразований.
+
 ### Настройка Target
 
 Вы можете указать целевую платформу с помощью опции `--target`:
 
 ```bash
-tsdown --target <цель>
+tsdown --target <платформа>
 ```
 
 ### Поддерживаемые значения
@@ -57,15 +83,47 @@ tsdown --target chrome100 --target node20.18
 
 Если ваш target включает такие возможности, возможно, потребуется установить пакет `@oxc-project/runtime` в проект:
 
-```bash
+::: code-group
+
+```sh [npm]
 npm install @oxc-project/runtime
 ```
 
+```sh [pnpm]
+pnpm add @oxc-project/runtime
+```
+
+```sh [yarn]
+yarn add @oxc-project/runtime
+```
+
+```sh [bun]
+bun add @oxc-project/runtime
+```
+
+:::
+
 Если вы хотите **встраивать вспомогательные функции** вместо их импорта из пакета runtime, вы можете установить `@oxc-project/runtime` как зависимость для разработки:
 
-```bash
+::: code-group
+
+```sh [npm]
 npm install -D @oxc-project/runtime
 ```
+
+```sh [pnpm]
+pnpm add -D @oxc-project/runtime
+```
+
+```sh [yarn]
+yarn add -D @oxc-project/runtime
+```
+
+```sh [bun]
+bun add -D @oxc-project/runtime
+```
+
+:::
 
 # Адаптация CSS
 
@@ -73,9 +131,25 @@ npm install -D @oxc-project/runtime
 
 Чтобы включить адаптацию CSS, вам нужно вручную установить [`unplugin-lightningcss`](https://github.com/unplugin/unplugin-lightningcss):
 
-```bash
+::: code-group
+
+```sh [npm]
 npm install -D unplugin-lightningcss
 ```
+
+```sh [pnpm]
+pnpm add -D unplugin-lightningcss
+```
+
+```sh [yarn]
+yarn add -D unplugin-lightningcss
+```
+
+```sh [bun]
+bun add -D unplugin-lightningcss
+```
+
+:::
 
 После установки просто укажите целевой браузер (например, `target: 'chrome100'`) в вашей конфигурации или параметрах CLI, и адаптация CSS будет включена автоматически.
 
