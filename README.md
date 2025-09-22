@@ -21,7 +21,7 @@
 
 <div>
   <a href="https://donate.teplostan.ski" target="_blank">
-    <img src="https://src.teplostan.ski/support-the-project.svg">
+    <img src="https://src.teplostan.ski/support-the-project.svg" alt="Support The Project ❤" />
   </a>
 </div>
 
