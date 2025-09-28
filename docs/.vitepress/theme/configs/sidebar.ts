@@ -36,7 +36,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
           link: "/sourcemap",
         },
         { text: "Минификация", link: "/minification" },
-        { text: "Тихий режим (Silent Mode)", link: "/silent-mode" },
+        { text: "Уровень логирования", link: "/log-level" },
         { text: "Прослойки (Shims)", link: "/shims" },
         { text: "Автоэкспорты", link: "/package-exports" },
         { text: "Сборка без объединения (Unbundle)", link: "/unbundle" },
