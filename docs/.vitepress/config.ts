@@ -2,10 +2,11 @@ import { fileURLToPath } from "node:url";
 import { defineConfig } from "vitepress";
 import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
 import { sidebar, nav } from "./theme/configs";
+import pkg from "../../package.json";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "tsdown",
+  title: `tsdown ${pkg.version}`,
   description: "tsdown По-русски | Элегантный сборщик библиотек",
   lastUpdated: true,
   cleanUrls: true,

@@ -18,9 +18,6 @@ hero:
     - theme: alt
       text: Справочник API
       link: /reference/api/Interface.Options
-    #- theme: alt
-      #text: Бета-версия
-      #link: /beta/
 
 features:
   - icon: 🚀
