@@ -11,3 +11,5 @@
 ```bash
 tsdown --sourcemap
 ```
+
+Обратите внимание, что карты исходного кода всегда будут включены, если у вас включена опция [`declarationMap`](https://www.typescriptlang.org/tsconfig/#declarationMap) в вашем `tsconfig.json`.

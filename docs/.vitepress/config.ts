@@ -8,7 +8,6 @@ import pkg from "../../package.json";
 export default defineConfig({
   title: `tsdown ${pkg.version}`,
   description: "tsdown По-русски | Элегантный сборщик библиотек",
-  lastUpdated: true,
   cleanUrls: true,
   lang: "ru",
   sitemap: {
@@ -53,11 +52,21 @@ export default defineConfig({
       label: "Навигация по странице",
       level: "deep",
     },
-    lastUpdatedText: "Последнее обновление",
+    lastUpdated: {
+      text: 'Последнее обновление',
+      formatOptions: {
+        forceLocale: true,
+        dateStyle: 'short',
+        timeStyle: 'short',
+      },
+    },
     darkModeSwitchLabel: "Тема",
+    lightModeSwitchTitle: 'Переключить на светлую тему',
+    darkModeSwitchTitle: 'Переключить на тёмную тему',
     sidebarMenuLabel: "Меню",
     returnToTopLabel: "Наверх",
-    langMenuLabel: "Выбрать язык",
+    langMenuLabel: 'Выбрать язык',
+    skipToContentLabel: 'Перейти к содержимому',
     docFooter: {
       prev: "Предыдущая",
       next: "Следующая",

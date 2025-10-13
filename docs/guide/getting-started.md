@@ -64,7 +64,7 @@ bun add -D typescript
 
 ## Cтартовые шаблоны {#стартовые-шаблоны}
 
-Для ещё более быстрого начала работы вы можете использовать CLI-инструмент [create-tsdown](https://github.com/gugustinette/create-tsdown), который предоставляет набор стартовых шаблонов для создания библиотек на чистом TypeScript, а также фронтенд-библиотек для React и Vue.
+Для ещё более быстрого начала работы вы можете использовать CLI-инструмент [create-tsdown](https://github.com/rolldown/tsdown/tree/main/packages/create-tsdown), который предоставляет набор стартовых шаблонов для создания библиотек на чистом TypeScript, а также фронтенд-библиотек для React и Vue.
 
 ::: code-group
 
