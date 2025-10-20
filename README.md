@@ -14,14 +14,14 @@
 **Официальный репозиторий: [github.com/rolldown/tsdown](https://github.com/rolldown/tsdown/)**
 
 > [!IMPORTANT]
-> ⚠️ **Важно**: Это **неофициальный** перевод документации [tsdown](https://github.com/rolldown/tsdown/), поддерживаемый сообществом. 
+> Это **неофициальный** перевод документации [tsdown](https://github.com/rolldown/tsdown/), поддерживаемый сообществом. 
 > Официальная документация: [tsdown.dev](https://tsdown.dev).
 
 <br>
 
 <div>
-  <a href="https://donate.teplostan.ski" target="_blank">
-    <img src="https://src.teplostan.ski/support-the-project.svg" alt="Support The Project ❤" />
+  <a href="https://donate.teplostanski.me" target="_blank">
+    <img src="https://src.teplostanski.me/support-the-project.svg" alt="Support The Project ❤" />
   </a>
 </div>
 
