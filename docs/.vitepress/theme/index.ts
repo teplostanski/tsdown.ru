@@ -1,11 +1,11 @@
-import type { Theme } from 'vitepress'
+import DefaultTheme from 'vitepress/theme'
 import Layout from './Layout.vue'
+import type { Theme } from 'vitepress'
 
 import './custom.css'
 import 'virtual:group-icons.css'
 
-const theme: Theme = {
+export default {
+  extends: DefaultTheme,
   Layout: Layout
-}
-
-export default theme
+} satisfies Theme
