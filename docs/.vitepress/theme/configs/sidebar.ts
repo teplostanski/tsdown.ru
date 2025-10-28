@@ -48,7 +48,8 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
       base: `${prefix}/recipes`,
       items: [
         { text: "Поддержка Vue", link: "/vue-support" },
-        { text: "Поддержка React", link: "/react-support" }
+        { text: "Поддержка React", link: "/react-support" },
+        { text: "Поддержка Solid", link: "/solid-support" }
       ],
     },
     {

@@ -17,13 +17,11 @@ npx create-tsdown@latest -t react
 ```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
 
-export default defineConfig([
-  {
-    entry: ['./src/index.ts'],
-    platform: 'neutral',
-    dts: true,
-  },
-])
+export default defineConfig({
+  entry: ['./src/index.ts'],
+  platform: 'neutral',
+  dts: true,
+})
 ```
 
 Создайте типичный React-компонент:
