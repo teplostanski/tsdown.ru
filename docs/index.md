@@ -17,7 +17,7 @@ hero:
       link: /guide/
     - theme: alt
       text: Справочник API
-      link: /reference/api/Interface.Options
+      link: /reference/api/Interface.UserConfig
 
 features:
   - icon: 🚀

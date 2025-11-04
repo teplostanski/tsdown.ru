@@ -70,7 +70,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: "Интерфейс командной строки", link: "/cli" },
         {
           text: "Параметры конфигурации",
-          link: "/api/Interface.Options",
+          link: "/api/Interface.UserConfig",
         },
         {
           text: "Определения типов",

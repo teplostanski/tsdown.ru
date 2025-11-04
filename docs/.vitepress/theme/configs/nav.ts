@@ -13,7 +13,7 @@ export function nav(prefix: string): DefaultTheme.Config["nav"] {
         },
         {
           text: "Справочник API",
-          link: `${prefix}/reference/api/Interface.Options`,
+          link: `${prefix}/reference/api/Interface.UserConfig`,
           activeMatch: `${prefix}/reference/`,
         },
         { text: "FAQ", link: `${prefix}/guide/faq.md` },
