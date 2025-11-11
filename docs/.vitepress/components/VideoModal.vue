@@ -12,7 +12,6 @@ defineOptions({
 
 const { lang } = useData()
 
-
 // SOURCE: https://github.com/rolldown/rolldown/blob/main/docs/.vitepress/theme/components/RolldownVideoModal.vue
 
 const VIDEO_ID = 'FF1oZqv_UYo' // https://www.youtube.com/watch?v=FF1oZqv_UYo

@@ -1,56 +1,59 @@
-import { fileURLToPath } from "node:url";
-import { defineConfig } from "vitepress";
-import { groupIconMdPlugin, groupIconVitePlugin } from "vitepress-plugin-group-icons";
-import { sidebar, nav } from "./theme/configs";
-import pkg from "../../package.json";
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vitepress'
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin,
+} from 'vitepress-plugin-group-icons'
+import { sidebar, nav } from './theme/configs'
+import pkg from '../../package.json'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: `tsdown ${pkg.version}`,
-  description: "tsdown По-русски | Элегантный сборщик библиотек",
+  description: 'tsdown По-русски | Элегантный сборщик библиотек',
   cleanUrls: true,
-  lang: "ru",
+  lang: 'ru',
   sitemap: {
-    hostname: "https://tsdown.ru",
+    hostname: 'https://tsdown.ru',
   },
   head: [
-    ["link", { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
-    ["meta", { name: "theme-color", content: "#ff7e17" }],
-    ["meta", { property: "og:title", content: "tsdown" }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+    ['meta', { name: 'theme-color', content: '#ff7e17' }],
+    ['meta', { property: 'og:title', content: 'tsdown' }],
     [
-      "meta",
+      'meta',
       {
-        property: "og:description",
-        content: "tsdown По-русски | Элегантный сборщик библиотек",
+        property: 'og:description',
+        content: 'tsdown По-русски | Элегантный сборщик библиотек',
       },
     ],
     [
-      "meta",
-      { property: "og:image", content: "https://tsdown.ru/og-image.png" },
+      'meta',
+      { property: 'og:image', content: 'https://tsdown.ru/og-image.png' },
     ],
-    ["meta", { property: "og:type", content: "website" }],
-    ["meta", { property: "og:url", content: "https://tsdown.ru/" }],
-    ["meta", { property: "twitter:card", content: "summary_large_image" }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://tsdown.ru/' }],
+    ['meta', { property: 'twitter:card', content: 'summary_large_image' }],
     [
-      "meta",
-      { property: "twitter:image", content: "https://tsdown.ru/og-image.png" },
+      'meta',
+      { property: 'twitter:image', content: 'https://tsdown.ru/og-image.png' },
     ],
   ],
 
   locales: {
-    root: { label: "Русский" },
-    en: { label: "English", link: "https://tsdown.dev" },
-    zh: { label: "简体中文", link: "https://tsdown.dev/zh-CN/" },
+    root: { label: 'Русский' },
+    en: { label: 'English', link: 'https://tsdown.dev' },
+    zh: { label: '简体中文', link: 'https://tsdown.dev/zh-CN/' },
   },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    logo: { src: "/tsdown.svg", width: 24, height: 24 },
-    nav: nav(""),
-    sidebar: sidebar(""),
+    logo: { src: '/tsdown.svg', width: 24, height: 24 },
+    nav: nav(''),
+    sidebar: sidebar(''),
     outline: {
-      label: "Навигация по странице",
-      level: "deep",
+      label: 'Навигация по странице',
+      level: 'deep',
     },
     lastUpdated: {
       text: 'Последнее обновление',
@@ -60,46 +63,46 @@ export default defineConfig({
         timeStyle: 'short',
       },
     },
-    darkModeSwitchLabel: "Тема",
+    darkModeSwitchLabel: 'Тема',
     lightModeSwitchTitle: 'Переключить на светлую тему',
     darkModeSwitchTitle: 'Переключить на тёмную тему',
-    sidebarMenuLabel: "Меню",
-    returnToTopLabel: "Наверх",
+    sidebarMenuLabel: 'Меню',
+    returnToTopLabel: 'Наверх',
     langMenuLabel: 'Выбрать язык',
     skipToContentLabel: 'Перейти к содержимому',
     docFooter: {
-      prev: "Предыдущая",
-      next: "Следующая",
+      prev: 'Предыдущая',
+      next: 'Следующая',
     },
     footer: {
-      message: "Распространяется под лицензией MIT.",
+      message: 'Распространяется под лицензией MIT.',
       copyright:
-        "Copyright © 2025-настоящее время VoidZero Inc. & Контрибьюторы",
+        'Copyright © 2025-настоящее время VoidZero Inc. & Контрибьюторы',
     },
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/rolldown/tsdown" },
-      { icon: "npm", link: "https://npmjs.com/package/tsdown" },
-      { icon: "jsr", link: "https://jsr.io/@sxzz/tsdown" },
+      { icon: 'github', link: 'https://github.com/rolldown/tsdown' },
+      { icon: 'npm', link: 'https://npmjs.com/package/tsdown' },
+      { icon: 'jsr', link: 'https://jsr.io/@sxzz/tsdown' },
     ],
 
     search: {
-      provider: "local",
+      provider: 'local',
       options: {
         locales: {
           root: {
             translations: {
               button: {
-                buttonText: "Поиск",
-                buttonAriaLabel: "Поиск по документации",
+                buttonText: 'Поиск',
+                buttonAriaLabel: 'Поиск по документации',
               },
               modal: {
-                noResultsText: "Ничего не найдено",
-                resetButtonTitle: "Очистить поиск",
+                noResultsText: 'Ничего не найдено',
+                resetButtonTitle: 'Очистить поиск',
                 footer: {
-                  selectText: "Выбрать",
-                  navigateText: "Навигация",
-                  closeText: "Закрыть",
+                  selectText: 'Выбрать',
+                  navigateText: 'Навигация',
+                  closeText: 'Закрыть',
                 },
               },
             },
@@ -111,7 +114,7 @@ export default defineConfig({
 
   markdown: {
     config(md) {
-      md.use(groupIconMdPlugin);
+      md.use(groupIconMdPlugin)
     },
   },
 
@@ -121,11 +124,11 @@ export default defineConfig({
         {
           find: /^.*\/VPHero\.vue$/,
           replacement: fileURLToPath(
-            new URL("./components/overrides/vp-hero.vue", import.meta.url)
+            new URL('./components/overrides/vp-hero.vue', import.meta.url),
           ),
         },
       ],
     },
     plugins: [groupIconVitePlugin()],
   },
-});
+})

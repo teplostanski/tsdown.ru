@@ -19,7 +19,6 @@ defineProps<{
   image?: DefaultTheme.ThemeableImage
   actions?: HeroAction[]
 }>()
-
 </script>
 
 <template>

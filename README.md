@@ -14,7 +14,7 @@
 **Официальный репозиторий: [github.com/rolldown/tsdown](https://github.com/rolldown/tsdown/)**
 
 > [!IMPORTANT]
-> Это **неофициальный** перевод документации [tsdown](https://github.com/rolldown/tsdown/), поддерживаемый сообществом. 
+> Это **неофициальный** перевод документации [tsdown](https://github.com/rolldown/tsdown/), поддерживаемый сообществом.
 > Официальная документация: [tsdown.dev](https://tsdown.dev).
 
 <br>

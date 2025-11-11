@@ -7,5 +7,5 @@ import 'virtual:group-icons.css'
 
 export default {
   extends: DefaultTheme,
-  Layout: Layout
+  Layout: Layout,
 } satisfies Theme
