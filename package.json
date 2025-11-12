@@ -1,6 +1,6 @@
 {
   "name": "tsdown.ru",
-  "version": "v0.16.2",
+  "version": "v0.16.3",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
