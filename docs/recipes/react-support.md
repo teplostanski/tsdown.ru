@@ -10,6 +10,12 @@
 npx create-tsdown@latest -t react
 ```
 
+Чтобы использовать React Compiler, можно быстро настроить проект с помощью специального шаблона:
+
+```bash
+npx create-tsdown@latest -t react-compiler
+```
+
 ## Минимальный пример
 
 Для настройки `tsdown` для React-библиотеки вы можете просто использовать стандартный `tsdown.config.ts`:
@@ -64,3 +70,32 @@ export default defineConfig({
 ```
 
 :::
+
+## Включение React Compiler
+
+React Compiler — это инновационный инструмент сборки, который автоматически оптимизирует React-приложения. React рекомендует авторам библиотек использовать React Compiler для предварительной компиляции кода с целью повышения производительности.
+
+В настоящее время React Compiler доступен только в виде плагина для Babel. Для начала работы можно либо создать проект на основе шаблона `react-compiler`, как показано выше, либо интегрировать его вручную:
+
+```bash
+pnpm add -D @rollup/plugin-babel babel-plugin-react-compiler
+```
+
+```ts [tsdown.config.ts]
+import pluginBabel from '@rollup/plugin-babel'
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  plugins: [
+    pluginBabel({
+      babelHelpers: 'bundled',
+      parserOpts: {
+        sourceType: 'module',
+        plugins: ['jsx', 'typescript'],
+      },
+      plugins: ['babel-plugin-react-compiler'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    }),
+  ],
+})
+```

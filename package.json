@@ -1,6 +1,6 @@
 {
   "name": "tsdown.ru",
-  "version": "v0.16.4",
+  "version": "v0.16.5",
   "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs",
@@ -10,10 +10,10 @@
     "format": "prettier --cache --write ."
   },
   "devDependencies": {
-    "@types/node": "^22.19.0",
+    "@types/node": "^22.19.1",
     "husky": "^9.1.7",
     "prettier": "^3.6.2",
-    "vitepress": "^2.0.0-alpha.12",
+    "vitepress": "^2.0.0-alpha.13",
     "vitepress-plugin-group-icons": "^1.6.5"
   }
 }
