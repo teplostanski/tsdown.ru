@@ -50,6 +50,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Поддержка Vue', link: '/vue-support' },
         { text: 'Поддержка React', link: '/react-support' },
         { text: 'Поддержка Solid', link: '/solid-support' },
+        { text: 'Поддержка Svelte', link: '/svelte-support' },
       ],
     },
     {
