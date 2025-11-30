@@ -7,7 +7,7 @@
 Если вы сейчас используете `tsup` и хотите перейти на `tsdown`, процесс миграции очень прост благодаря специальной команде `migrate`:
 
 ```bash
-npx tsdown migrate
+npx tsdown-migrate
 ```
 
 > [!WARNING]
