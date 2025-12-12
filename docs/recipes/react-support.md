@@ -64,7 +64,9 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   inputOptions: {
-    jsx: 'react', // Использовать классическое преобразование JSX
+    transform: {
+      jsx: 'react', // Использовать классическое преобразование JSX
+    },
   },
 })
 ```
