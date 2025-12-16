@@ -34,3 +34,32 @@ tsdown --platform neutral
 
 > [!TIP]
 > Выбор правильной платформы гарантирует, что ваш код оптимизирован для предполагаемой среды выполнения. Например, используйте `browser` для фронтенд-проектов, `node` для серверных приложений и `neutral` для универсальных библиотек.
+
+### Разрешение модулей (Module Resolution)
+
+Разные платформы используют собственные стратегии определения точек Параметр `mainFields` задаёт, какие поля в файле `package.json` следует проверять:
+
+- **`node`:** `['main', 'module']`
+- **`browser`:** `['browser', 'module', 'main']`
+- **`neutral`:** `[]` (основывается исключительно на поле `exports`)
+
+При использовании платформы `neutral` пакеты без поля `exports` могут вызвать проблемы с разрешением зависимостей. Если вы видите предупреждения вроде:
+
+```
+Help: The "main" field here was ignored. Main fields must be configured explicitly when using the "neutral" platform.
+```
+
+задайте `mainFields` явно в `inputOptions.resolve`:
+
+```ts
+export default defineConfig({
+  platform: 'neutral',
+  inputOptions: {
+    resolve: {
+      mainFields: ['module', 'main'],
+    },
+  },
+})
+```
+
+Дополнительную информацию см. в [документации по параметрам разрешения Rolldown](https://rolldown.rs/options/resolve#mainfields).
