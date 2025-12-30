@@ -41,6 +41,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Автоэкспорты', link: '/package-exports' },
         { text: 'Сборка без объединения (Unbundle)', link: '/unbundle' },
         { text: 'CJS экспорт по умолчанию', link: '/cjs-default' },
+        { text: 'CSS', link: '/css' },
       ],
     },
     {
