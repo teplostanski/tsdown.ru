@@ -63,6 +63,21 @@ export default defineConfig({
 
 Это особенно полезно в сочетании с опцией TypeScript [`customConditions`](https://www.typescriptlang.org/tsconfig/#customConditions), позволяющей контролировать, какие условия используют исходный код.
 
+## Экспорт CSS
+
+Когда параметр `css.splitting` установлен в значение `false`, сгенерированный CSS‑файл автоматически добавляется в `exports`:
+
+```ts
+export default defineConfig({
+  css: {
+    splitting: false,
+  },
+  exports: true,
+})
+```
+
+Имя CSS‑файла по умолчанию — `style.css`, его можно переопределить через опцию `css.fileName`.
+
 ## Настройка экспортов
 
 Если вам нужен более тонкий контроль над генерируемыми экспортами, используйте пользовательскую функцию через `exports.customExports`:
