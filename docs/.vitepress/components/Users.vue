@@ -136,10 +136,7 @@ const users = computed(() => {
       <h3>Кто использует tsdown?</h3>
     </a>
 
-    <Marquee
-      :velocity="40"
-      class="marquee-wrapper dark-zebra-pattern"
-    >
+    <Marquee :velocity="40" class="marquee-wrapper dark-zebra-pattern">
       <div class="marquee-content">
         <a
           v-for="user of users"
