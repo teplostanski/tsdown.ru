@@ -11,6 +11,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Начало работы', link: '/getting-started' },
         { text: 'Миграция с tsup', link: '/migrate-from-tsup' },
         { text: 'FAQ', link: '/faq' },
+        { text: 'Работа с AI', link: '/skills' },
       ],
     },
     {
@@ -28,7 +29,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
           link: '/dependencies',
         },
         { text: 'Режим наблюдения (Watch Mode)', link: '/watch-mode' },
-        { text: 'Целевая платформа (Target)', link: '/target' },
+        { text: 'Окружение сборки (target)', link: '/target' },
         { text: 'Платформа', link: '/platform' },
         { text: 'Tree-shaking', link: '/tree-shaking' },
         {
@@ -42,6 +43,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Сборка без объединения (Unbundle)', link: '/unbundle' },
         { text: 'CJS экспорт по умолчанию', link: '/cjs-default' },
         { text: 'CSS', link: '/css' },
+        { text: 'Валидация пакета', link: '/lint' },
       ],
     },
     {
@@ -52,6 +54,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Поддержка React', link: '/react-support' },
         { text: 'Поддержка Solid', link: '/solid-support' },
         { text: 'Поддержка Svelte', link: '/svelte-support' },
+        { text: 'Поддержка WASM', link: '/wasm-support' },
       ],
     },
     {
@@ -62,6 +65,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Хуки', link: '/hooks' },
         { text: 'Опции Rolldown', link: '/rolldown-options' },
         { text: 'Программный API', link: '/programmatic-usage' },
+        { text: 'CI окружение', link: '/ci' },
         { text: 'Производительность', link: '/benchmark' },
       ],
     },
@@ -77,6 +81,11 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         {
           text: 'Определения типов',
           link: '/api/Type.Definitions',
+        },
+        {
+          text: 'Rolldown',
+          link: 'https://rolldown.rs/reference/',
+          target: '_blank',
         },
       ],
     },

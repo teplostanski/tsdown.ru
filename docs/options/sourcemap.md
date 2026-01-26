@@ -4,7 +4,7 @@
 
 Например, карты исходного кода позволяют определить, какая строка в вашем React или Vue компоненте вызвала ошибку, даже если среда выполнения видит только собранный или минифицированный код.
 
-### Включение карт исходного кода
+## Включение карт исходного кода
 
 Вы можете указать `tsdown` генерировать карты исходного кода с помощью опции `--sourcemap`:
 
@@ -12,4 +12,59 @@
 tsdown --sourcemap
 ```
 
-Обратите внимание, что карты исходного кода всегда будут включены, если у вас включена опция [`declarationMap`](https://www.typescriptlang.org/tsconfig/#declarationMap) в вашем `tsconfig.json`.
+Или в конфиге:
+
+```ts [tsdown.config.ts]
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  sourcemap: true,
+})
+```
+
+> [!NOTE]
+> Карты исходного кода включаются автоматически, если в `tsconfig.json` включена опция [`declarationMap`](https://www.typescriptlang.org/tsconfig/#declarationMap).
+
+## Режимы
+
+Опция `sourcemap` принимает такие значения:
+
+| Значение   | Описание                                                                                                                                                                                                |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `false`    | Карты исходного кода отключены (по умолчанию)                                                                                                                                                           |
+| `true`     | Генерируются отдельные файлы `.map`. В каждый выходной файл добавляется комментарий `//# sourceMappingURL` со ссылкой на соответствующий `.map`                                                         |
+| `'inline'` | Карта встроена в выходной файл в виде base64 data URL. Отдельный `.map` не создаётся. Аналог [`inlineSourceMap`](https://www.typescriptlang.org/tsconfig/#inlineSourceMap) в TypeScript                 |
+| `'hidden'` | Генерируются отдельные `.map` файлы, но комментарий `//# sourceMappingURL` **не** добавляется. Удобно, когда карты нужны сервисам мониторинга ошибок, но не должны подгружаться браузером автоматически |
+
+### Через CLI
+
+```bash
+# Включить source map (отдельные .map файлы)
+tsdown --sourcemap
+
+# Встроенные в файл
+tsdown --sourcemap inline
+
+# Скрытые .map без комментария в выводе
+tsdown --sourcemap hidden
+```
+
+### В конфиге
+
+```ts [tsdown.config.ts]
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  // Встроить карту в выходной файл
+  sourcemap: 'inline',
+})
+```
+
+```ts [tsdown.config.ts]
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  // Генерировать .map без комментария sourceMappingURL
+  sourcemap: 'hidden',
+})
+```
