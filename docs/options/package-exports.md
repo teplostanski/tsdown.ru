@@ -80,9 +80,19 @@ export default defineConfig({
 
 ## Настройка экспортов
 
-Если вам нужен более тонкий контроль над генерируемыми экспортами, используйте пользовательскую функцию через `exports.customExports`:
+Если нужен больший контроль над сгенерированными `exports`, задайте объект или собственную функцию в `exports.customExports`:
 
-```ts
+```ts [tsdown.config.ts]
+export default defineConfig({
+  exports: {
+    customExports: {
+      './foo': './foo.js',
+    },
+  },
+})
+```
+
+```ts [tsdown.config.ts]
 export default defineConfig({
   exports: {
     customExports(pkg, context) {

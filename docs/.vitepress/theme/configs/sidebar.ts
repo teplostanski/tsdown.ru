@@ -9,6 +9,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'Введение', link: '/' },
         { text: 'Начало работы', link: '/getting-started' },
+        { text: 'Как это работает', link: '/how-it-works' },
         { text: 'Миграция с tsup', link: '/migrate-from-tsup' },
         { text: 'FAQ', link: '/faq' },
         { text: 'Работа с AI', link: '/skills' },
@@ -29,7 +30,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
           link: '/dependencies',
         },
         { text: 'Режим наблюдения (Watch Mode)', link: '/watch-mode' },
-        { text: 'Окружение сборки (target)', link: '/target' },
+        { text: 'Целевое окружение (target)', link: '/target' },
         { text: 'Платформа', link: '/platform' },
         { text: 'Tree-shaking', link: '/tree-shaking' },
         {

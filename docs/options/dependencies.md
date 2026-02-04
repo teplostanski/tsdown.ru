@@ -18,47 +18,96 @@
 
 Другими словами, в сборку попадут только те `devDependencies` и фантомные зависимости, которые действительно используются в вашем проекте.
 
-## Пропуск сборки модулей из Node Modules
+## Опции `deps`
 
-Если нужно **пропустить обработку и сборку всех зависимостей из node_modules**, включите опцию `skipNodeModulesBundle` в конфигурации:
+Все опции, относящиеся к обработке зависимостей, настраиваются внутри поля `deps`:
 
-```ts
+```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  skipNodeModulesBundle: true,
+  deps: {
+    neverBundle: ['lodash', /^@my-scope\//],
+    alwaysBundle: ['some-package'],
+    onlyAllowBundle: ['cac', 'bumpp'],
+    skipNodeModulesBundle: true,
+  },
+})
+```
+
+### `deps.skipNodeModulesBundle`
+
+Если вы хотите **полностью пропустить разрешение и сборку всех зависимостей из `node_modules`**, включите `skipNodeModulesBundle`:
+
+```ts [tsdown.config.ts]
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  deps: {
+    skipNodeModulesBundle: true,
+  },
 })
 ```
 
 Это не позволит `tsdown` обрабатывать и собирать какие-либо зависимости из `node_modules`, независимо от того, как они используются в коде.
 
-## Настройка обработки зависимостей
+::: warning
+`skipNodeModulesBundle` нельзя использовать вместе с `alwaysBundle`: эти опции взаимоисключающие.
+:::
 
-`tsdown` предоставляет две опции для изменения поведения по умолчанию:
+### `deps.onlyAllowBundle`
 
-### Опция `external`
-
-Опция `external` позволяет явно указать, какие зависимости должны считаться внешними и не попадать в бандл:
+Опция `onlyAllowBundle` работает как список разрешённых зависимостей, которые можно включать в бандл из `node_modules`. Если в бандле окажется зависимость, которой нет в этом списке, tsdown завершит сборку с ошибкой. Это помогает не допустить, чтобы в больших проектах зависимости из `node_modules` случайно «затянулись» внутрь бандла.
 
 ```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  external: ['lodash', /^@my-scope\//],
+  deps: {
+    onlyAllowBundle: ['cac', 'bumpp'],
+  },
+})
+```
+
+В этом примере в бандл могут попадать только `cac` и `bumpp`. Если будет импортирована любая другая зависимость из `node_modules`, tsdown завершит сборку с ошибкой и укажет, какой пакет был неожиданно включён и из каких файлов он импортировался.
+
+#### Поведение
+
+- **`onlyAllowBundle` — массив** (например, `['cac', /^my-/]`): в бандл могут попадать только зависимости, подходящие под список. Для остальных будет выброшена ошибка. Неиспользуемые шаблоны из списка также будут отражены в отчёте.
+- **`onlyAllowBundle` — `false`**: все проверки и предупреждения, связанные с включёнными в бандл зависимостями, отключаются.
+- **`onlyAllowBundle` не задано** (по умолчанию): если какая‑то зависимость из `node_modules` попадает в бандл, выводится предупреждение с рекомендацией добавить опцию `onlyAllowBundle` или установить её в `false`, чтобы отключить предупреждения.
+
+::: tip
+Указывайте в списке `onlyAllowBundle` и все необходимые **подзависимости**, а не только пакеты верхнего уровня, которые вы импортируете напрямую.
+:::
+
+### `deps.neverBundle`
+
+Опция `neverBundle` позволяет явно пометить отдельные зависимости как внешние, чтобы они не попадали в бандл вашей библиотеки. Например:
+
+```ts [tsdown.config.ts]
+import { defineConfig } from 'tsdown'
+
+export default defineConfig({
+  deps: {
+    neverBundle: ['lodash', /^@my-scope\//],
+  },
 })
 ```
 
 В этом примере `lodash` и все пакеты с префиксом `@my-scope` будут считаться внешними.
 
-### Опция `noExternal`
+### Опция `deps.alwaysBundle`
 
-Опция `noExternal` позволяет принудительно включить определённые зависимости в бандл, даже если они указаны в `dependencies` или `peerDependencies`:
+Опция `alwaysBundle` позволяет принудительно включить в бандл отдельные зависимости, даже если они указаны в `dependencies` или `peerDependencies`. Например:
 
 ```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-  noExternal: ['some-package'],
+  deps: {
+    alwaysBundle: ['some-package'],
+  },
 })
 ```
 
@@ -84,15 +133,27 @@ export default defineConfig({
 })
 ```
 
+## Переход с устаревших опций
+
+Перечисленные ниже опции **верхнего уровня устарели**. Перенесите настройки в объект `deps`:
+
+| Устаревшая опция        | Новая опция                  |
+| ----------------------- | ---------------------------- |
+| `external`              | `deps.neverBundle`           |
+| `noExternal`            | `deps.alwaysBundle`          |
+| `inlineOnly`            | `deps.onlyAllowBundle`       |
+| `skipNodeModulesBundle` | `deps.skipNodeModulesBundle` |
+
 ## Краткое резюме
 
 - **По умолчанию**:
   - `dependencies` и `peerDependencies` считаются внешними и не включаются в бандл.
   - `devDependencies` и фантомные зависимости включаются в сборку только если они фактически используются в вашем коде.
 - **Настройка**:
-  - Используйте `external`, чтобы явно указать внешние зависимости.
-  - Используйте `noExternal`, чтобы включить определённые зависимости в бандл.
-  - Используйте `skipNodeModulesBundle`, чтобы пропустить обработку и сборку всех зависимостей из `node_modules`.
+  - Используйте `deps.onlyAllowBundle`, чтобы разрешить включение в бандл только перечисленных зависимостей и завершать сборку с ошибкой при любых других.
+  - Используйте `deps.neverBundle`, чтобы явно пометить отдельные зависимости как внешние.
+  - Используйте `deps.alwaysBundle`, чтобы принудительно включить отдельные зависимости в бандл.
+  - Используйте `deps.skipNodeModulesBundle`, чтобы пропустить разрешение и сборку всех зависимостей из `node_modules`.
 - **Файлы деклараций**:
   - Логика сборки файлов деклараций теперь аналогична JavaScript.
   - Используйте `resolver: 'tsc'` для лучшей совместимости со сложными типами сторонних библиотек.

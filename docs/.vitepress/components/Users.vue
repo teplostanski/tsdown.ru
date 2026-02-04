@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import Marquee from './Marquee.vue'
 import { computed } from 'vue'
+import Marquee from './Marquee.vue'
 
 const { isDark } = useData()
 
@@ -140,6 +140,7 @@ const users = computed(() => {
       <div class="marquee-content">
         <a
           v-for="user of users"
+          :key="user.name"
           :href="user.url"
           target="_blank"
           rel="noopener noreferrer"

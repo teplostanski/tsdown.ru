@@ -5,12 +5,11 @@ import {
   groupIconVitePlugin,
 } from 'vitepress-plugin-group-icons'
 import { sidebar, nav } from './theme/configs'
-import pkg from '../../package.json'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: `tsdown ${pkg.version}`,
-  description: 'tsdown По-русски | Элегантный сборщик библиотек',
+  title: `tsdown`,
+  description: 'tsdown На русском | Элегантный сборщик библиотек',
   cleanUrls: true,
   lang: 'ru',
   sitemap: {
@@ -24,7 +23,7 @@ export default defineConfig({
       'meta',
       {
         property: 'og:description',
-        content: 'tsdown По-русски | Элегантный сборщик библиотек',
+        content: 'tsdown На русском | Элегантный сборщик библиотек',
       },
     ],
     [

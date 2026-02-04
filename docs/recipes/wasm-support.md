@@ -78,7 +78,7 @@ instance.exports.add(1, 2)
 
 ## Поддержка `wasm-bindgen`
 
-### Окружение сборки `bundler` (по умолчанию, рекомендуется)
+### Целевое окружение `bundler` (по умолчанию, рекомендуется)
 
 ```ts
 import { add } from 'some-pkg'
@@ -86,7 +86,7 @@ import { add } from 'some-pkg'
 add(1, 2)
 ```
 
-### Окружение сборки `web`
+### Целевое окружение `web`
 
 #### В Node.js
 

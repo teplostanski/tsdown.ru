@@ -68,11 +68,25 @@ tsdown --tsconfig tsconfig.build.json
 
 См. также [Очистка](../options/cleaning.md).
 
-## `--external <module>`
+## `--deps.never-bundle <module>`
 
 Помечает модуль как внешний. Указанный модуль не будет включён в бандл.
 
 См. также [Зависимости](../options/dependencies.md).
+
+## `--deps.skip-node-modules-bundle`
+
+Пропускает разрешение и сборку всех зависимостей из `node_modules`.
+
+См. также [Зависимости](../options/dependencies.md).
+
+## `--external <module>` {#external}
+
+::: warning Устарело
+Вместо этого используйте `--deps.never-bundle`.
+:::
+
+Псевдоним для `--deps.never-bundle`.
 
 ## `--minify`
 
@@ -80,9 +94,9 @@ tsdown --tsconfig tsconfig.build.json
 
 См. также [Минификация](../options/minification.md).
 
-## `--target <окружение>`
+## `--target <target>`
 
-Задаёт окружение сборки (версию JavaScript или среду) для выходного бандла. Примеры:
+Задаёт целевое окружение (версию JavaScript или среду) для выходного бандла. Примеры:
 
 - `es2015`
 - `esnext`
@@ -91,7 +105,7 @@ tsdown --tsconfig tsconfig.build.json
 
 Чтобы отключить преобразования синтаксиса, используйте флаг `--no-target` или укажите `target: false` в конфиге.
 
-См. также [Окружение сборки (target)](../options/target.md).
+См. также [Целевое окружение (target)](../options/target.md).
 
 ## `--log-level <уровень>`
 
@@ -231,6 +245,19 @@ tsdown --copy public
 
 Псевдоним для `--copy`.
 **Устарело:** Пожалуйста, используйте вместо этого `--copy` для большей ясности и согласованности.
+
+## `--exe`
+
+**[экспериментально]** Сборка в один исполняемый файл через SEA (Single Executable Applications) в Node.js.
+
+Вывод упаковывается в один исполняемый файл средствами Node.js SEA. Нужен Node.js 25.5.0 или новее; в Bun и Deno не поддерживается.
+
+Когда включён `exe`:
+
+- Формат вывода по умолчанию меняется с `esm` на `cjs`, кроме случая поддержки ESM SEA (Node.js ≥ v25.7.0).
+- Генерация файлов деклараций (`dts`) по умолчанию отключена.
+- Разделение кода (code splitting) отключено.
+- Поддерживается только одна точка входа.
 
 ## `--exports`
 
