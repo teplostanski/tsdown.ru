@@ -39,3 +39,9 @@ features:
     details: |
       Совместимость с основными опциями и функциями tsup, обеспечивающая безболезненный переход.
 ---
+
+<script setup>
+import HomePage from './.vitepress/components/HomePage.vue'
+</script>
+
+<HomePage />
