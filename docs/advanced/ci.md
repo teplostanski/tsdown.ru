@@ -28,7 +28,7 @@ tsdown использует пакет [`is-in-ci`](https://www.npmjs.com/packag
 - [`exports`](/options/package-exports) — Автогенерация экспортов `package.json`
 - `unused` — Проверка неиспользуемых зависимостей
 - `devtools` — Интеграция DevTools
-- `failOnWarn` — Завершать с ошибкой при предупреждениях (по умолчанию `'ci-only'`)
+- `failOnWarn` — Завершать с ошибкой при предупреждениях (по умолчанию `false`)
 
 ### Простое использование
 
@@ -42,7 +42,7 @@ export default defineConfig({
   dts: 'local-only',
   // Запускать publint только в CI
   publint: 'ci-only',
-  // Завершать с ошибкой при предупреждениях только в CI (это значение по умолчанию)
+  // Завершать с ошибкой при предупреждениях только в CI
   failOnWarn: 'ci-only',
 })
 ```
@@ -90,7 +90,7 @@ export default defineConfig({
   entry: 'src/index.ts',
   format: ['esm', 'cjs'],
   dts: true,
-  // Завершать с ошибкой при предупреждениях в CI
+  // Завершать сборку с ошибкой при предупреждениях только в CI (включайте явно при необходимости)
   failOnWarn: 'ci-only',
   // Запускать валидаторы пакета в CI
   publint: 'ci-only',
