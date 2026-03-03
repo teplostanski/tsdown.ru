@@ -103,28 +103,30 @@ tsdown --target chrome100 --target node20.18
 
 `tsdown` может адаптировать CSS под выбранное целевое окружение (версии браузеров). Например, вложенный селектор с `&` будет развёрнут в плоскую структуру, если в целевом окружении указан `chrome108` или старше.
 
-Чтобы включить адаптацию CSS, вам нужно вручную установить [`unplugin-lightningcss`](https://github.com/unplugin/unplugin-lightningcss):
+Чтобы включить понижение синтаксиса CSS, установите [`lightningcss`](https://lightningcss.dev/):
 
 ::: code-group
 
 ```sh [npm]
-npm install -D unplugin-lightningcss
+npm install -D lightningcss
 ```
 
 ```sh [pnpm]
-pnpm add -D unplugin-lightningcss
+pnpm add -D lightningcss
 ```
 
 ```sh [yarn]
-yarn add -D unplugin-lightningcss
+yarn add -D lightningcss
 ```
 
 ```sh [bun]
-bun add -D unplugin-lightningcss
+bun add -D lightningcss
 ```
 
 :::
 
 После установки укажите браузер в целевом окружении (например, `target: 'chrome100'`) в конфиге или в CLI — адаптация CSS включится автоматически.
+
+Дополнительные параметры Lightning CSS также можно передать через `css.lightningcss`. Подробности см. в [документации по CSS](/options/css.md#lightning-css).
 
 Для получения дополнительной информации о поддержке браузеров и совместимости CSS обратитесь к [документации Lightning CSS](https://lightningcss.dev/).

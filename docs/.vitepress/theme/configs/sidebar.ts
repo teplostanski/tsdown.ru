@@ -44,6 +44,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Сборка без объединения (Unbundle)', link: '/unbundle' },
         { text: 'CJS экспорт по умолчанию', link: '/cjs-default' },
         { text: 'CSS', link: '/css' },
+        { text: 'Исполняемый файл', link: '/exe.md' },
         { text: 'Валидация пакета', link: '/lint' },
       ],
     },
