@@ -56,7 +56,7 @@ export default defineConfig({
 tsdown --publint
 ```
 
-## attw (Are the types wrong?)
+## attw (Are the types wrong?) {#attw}
 
 [attw](https://arethetypeswrong.github.io/) проверяет корректность TypeScript-деклараций при разных стратегиях разрешения модулей (`node10`, `node16`, `bundler`). Находит, например, неверные ESM/CJS декларации, из-за которых у пользователей пакета возникают ошибки в рантайме.
 
