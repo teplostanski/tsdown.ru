@@ -187,18 +187,18 @@ export default defineConfig({
 
 Опция `css.transformer` определяет способ обработки CSS. PostCSS и Lightning CSS представляют собой **взаимоисключающие** пути обработки:
 
-- **`'postcss'`** (по умолчанию): директивы `@import` обрабатываются через [`postcss-import`](https://github.com/postcss/postcss-import), применяются плагины PostCSS, после чего Lightning CSS используется только для финального понижения синтаксиса и минификации.
-- **`'lightningcss'`**: директивы `@import` обрабатываются через `bundleAsync()` из Lightning CSS, а PostCSS **не используется вообще**.
+- **`'lightningcss'`** (по умолчанию): директивы `@import` обрабатывает Lightning CSS через `bundleAsync()`; PostCSS **не используется**.
+- **`'postcss'`**: директивы `@import` обрабатываются через [`postcss-import`](https://github.com/postcss/postcss-import), применяются плагины PostCSS, затем Lightning CSS используется только для финального понижения синтаксиса и минификации.
 
 ```ts
 export default defineConfig({
   css: {
-    transformer: 'lightningcss', // использовать Lightning CSS для всех задач
+    transformer: 'postcss', // PostCSS для @import и плагинов
   },
 })
 ```
 
-При использовании трансформера `'postcss'` по умолчанию установите `postcss` и, при необходимости, `postcss-import` для обработки `@import`:
+При использовании трансформера `'postcss'` установите `postcss` и при необходимости `postcss-import` для разрешения директив `@import`:
 
 ```bash
 npm install -D postcss postcss-import
@@ -211,6 +211,7 @@ npm install -D postcss postcss-import
 ```ts
 export default defineConfig({
   css: {
+    transformer: 'postcss',
     postcss: {
       plugins: [require('autoprefixer')],
     },
@@ -223,12 +224,13 @@ export default defineConfig({
 ```ts
 export default defineConfig({
   css: {
+    transformer: 'postcss',
     postcss: './config', // искать postcss.config.js в директории ./config/
   },
 })
 ```
 
-Если опция `css.postcss` не указана, tsdown автоматически обнаруживает конфигурацию PostCSS в корневой директории проекта.
+Если `css.postcss` не указан, а `transformer` установлен в `'postcss'`, tsdown автоматически подхватывает конфигурацию PostCSS из корня проекта.
 
 ## Lightning CSS
 
@@ -347,7 +349,7 @@ dist/
 
 | Опция                     | Тип                           | По умолчанию          | Описание                                                                                                       |
 | ------------------------- | ----------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `css.transformer`         | `'postcss' \| 'lightningcss'` | `'postcss'`           | Механизм обработки CSS (требуется установленный пакет `@tsdown/css`)                                           |
+| `css.transformer`         | `'postcss' \| 'lightningcss'` | `'lightningcss'`      | Механизм обработки CSS (требуется установленный пакет `@tsdown/css`)                                           |
 | `css.splitting`           | `boolean`                     | `false`               | Включает разделение CSS по чанкам                                                                              |
 | `css.fileName`            | `string`                      | `'style.css'`         | Имя файла для объединённого CSS (при `splitting: false`)                                                       |
 | `css.minify`              | `boolean`                     | `false`               | Включает минификацию CSS (требуется установленный пакет `@tsdown/css`)                                         |
