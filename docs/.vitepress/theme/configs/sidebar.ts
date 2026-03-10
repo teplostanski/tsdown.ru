@@ -42,6 +42,7 @@ export function sidebar(prefix: string): DefaultTheme.SidebarItem[] {
         { text: 'Прослойки (Shims)', link: '/shims' },
         { text: 'Автоэкспорты', link: '/package-exports' },
         { text: 'Сборка без объединения (Unbundle)', link: '/unbundle' },
+        { text: 'Корневая директория', link: '/root' },
         { text: 'CJS экспорт по умолчанию', link: '/cjs-default' },
         { text: 'CSS', link: '/css' },
         { text: 'Исполняемый файл', link: '/exe.md' },
