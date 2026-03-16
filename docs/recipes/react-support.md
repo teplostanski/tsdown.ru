@@ -80,23 +80,18 @@ React Compiler — это инновационный инструмент сбо
 В настоящее время React Compiler доступен только в виде плагина для Babel. Для начала работы можно либо создать проект на основе шаблона `react-compiler`, как показано выше, либо интегрировать его вручную:
 
 ```bash
-pnpm add -D @rollup/plugin-babel babel-plugin-react-compiler
+pnpm add -D @rolldown/plugin-babel @vitejs/plugin-react
 ```
 
 ```ts [tsdown.config.ts]
-import pluginBabel from '@rollup/plugin-babel'
+import pluginBabel from '@rolldown/plugin-babel'
+import { reactCompilerPreset } from '@vitejs/plugin-react'
 import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   plugins: [
     pluginBabel({
-      babelHelpers: 'bundled',
-      parserOpts: {
-        sourceType: 'module',
-        plugins: ['jsx', 'typescript'],
-      },
-      plugins: ['babel-plugin-react-compiler'],
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      presets: [reactCompilerPreset()],
     }),
   ],
 })
