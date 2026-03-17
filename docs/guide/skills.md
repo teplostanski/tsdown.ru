@@ -4,13 +4,20 @@ tsdown предоставляет официальные [skills](https://agents
 
 ## Установка
 
-Установите skill tsdown для вашего AI агента-разработчика:
+Установите все skills tsdown для вашего AI-агента разработки:
 
 ```bash
 npx skills add rolldown/tsdown
 ```
 
-Исходный код skill находится [здесь](https://github.com/rolldown/tsdown/tree/main/skills/tsdown).
+Или установите только конкретный skill:
+
+```bash
+npx skills add rolldown/tsdown --skill tsdown          # только skill tsdown
+npx skills add rolldown/tsdown --skill tsdown-migrate  # только skill для миграции
+```
+
+Исходный код skills находится [здесь](https://github.com/rolldown/tsdown/tree/main/skills).
 
 ## Примеры запросов
 
@@ -31,6 +38,38 @@ npx skills add rolldown/tsdown
 ```
 Настрой сборку монорепозитория с поддержкой workspace в tsdown
 ```
+
+## Skill для миграции
+
+Для проектов, переходящих с tsup, вместе с `rolldown/tsdown` также устанавливается отдельный skill для миграции. При необходимости его можно установить отдельно:
+
+```bash
+npx skills add rolldown/tsdown --skill tsdown-migrate
+```
+
+Этот skill помогает AI-агентам выполнять миграцию с tsup на tsdown и включает:
+
+- Полное соответствие опций между tsup и tsdown
+- Различия значений по умолчанию и способы сохранить поведение tsup
+- Неподдерживаемые опции и их альтернативы
+- Правила миграции `package.json` (dependencies, scripts, поля конфигурации)
+- Новые возможности, доступные только в tsdown, которые стоит предложить после миграции
+
+### Примеры запросов
+
+```
+Migrate my tsup project to tsdown
+```
+
+```
+Convert my tsup.config.ts to tsdown format
+```
+
+```
+What are the differences between tsup and tsdown options?
+```
+
+Исходный код migration skill находится [здесь](https://github.com/rolldown/tsdown/tree/main/skills/tsdown-migrate).
 
 ## Что включено
 

@@ -328,6 +328,94 @@ export function greet() {
 
 Такой режим удобен для библиотек компонентов, когда стили должны подключаться автоматически при импорте компонентов.
 
+## CSS Modules
+
+Файлы с расширением `.module.css` (и варианты для препроцессоров, например `.module.scss`, `.module.less` и т.д.) обрабатываются как [CSS modules](https://github.com/css-modules/css-modules). Имена классов автоматически ограничиваются областью видимости и экспортируются как объект JavaScript:
+
+```ts
+// src/index.ts
+import styles from './app.module.css'
+
+console.log(styles.title) // "scoped_title_hash"
+```
+
+```css
+/* app.module.css */
+.title {
+  color: red;
+}
+.content {
+  font-size: 14px;
+}
+```
+
+CSS выводится с именами классов, ограниченными областью видимости, а выходной JS экспортирует соответствие исходных и сгенерированных имён (map).
+
+### Настройка
+
+Поведение CSS modules настраивается через `css.modules`:
+
+```ts
+export default defineConfig({
+  css: {
+    modules: {
+      // Режим области видимости: 'local' (по умолчанию) или 'global'
+      scopeBehaviour: 'local',
+
+      // Шаблон имён классов с областью видимости (синтаксис шаблонов Lightning CSS)
+      generateScopedName: '[hash]_[local]',
+
+      // Преобразование соглашения об именовании классов в JS-экспортах
+      localsConvention: 'camelCase',
+    },
+  },
+})
+```
+
+Установите `css.modules: false`, чтобы полностью отключить CSS modules — файлы `.module.css` будут обрабатываться как обычный CSS.
+
+### `localsConvention`
+
+Управляет тем, как имена классов экспортируются в JavaScript:
+
+| Значение          | Вход      | Экспорт             |
+| ----------------- | --------- | ------------------- |
+| _(не задано)_     | `foo-bar` | `foo-bar`           |
+| `'camelCase'`     | `foo-bar` | `foo-bar`, `fooBar` |
+| `'camelCaseOnly'` | `foo-bar` | `fooBar`            |
+| `'dashes'`        | `foo-bar` | `foo-bar`, `fooBar` |
+| `'dashesOnly'`    | `foo-bar` | `fooBar`            |
+
+### `generateScopedName`
+
+При использовании `transformer: 'lightningcss'` (по умолчанию) параметр принимает строковый [шаблон Lightning CSS](https://lightningcss.dev/css-modules.html#custom-naming-conventions) (например, `'[hash]_[local]'`).
+
+При использовании `transformer: 'postcss'` также поддерживается функция:
+
+```ts
+export default defineConfig({
+  css: {
+    transformer: 'postcss',
+    modules: {
+      generateScopedName: (name, filename, css) => {
+        return `my-lib_${name}`
+      },
+    },
+  },
+})
+```
+
+> [!NOTE]
+> Функциональная форма `generateScopedName` поддерживается только с `transformer: 'postcss'`. Трансформер Lightning CSS поддерживает только строковые шаблоны.
+
+### Опциональные зависимости
+
+Если вы используете `transformer: 'postcss'` вместе с CSS modules, установите [`postcss-modules`](https://github.com/css-modules/postcss-modules):
+
+```bash
+npm install -D postcss postcss-modules
+```
+
 ## Разделение кода CSS
 
 ### Режим объединения (по умолчанию)
@@ -372,6 +460,22 @@ dist/
   async-abc123.css ← CSS из асинхронного чанка
 ```
 
+## Опциональные peer dependencies для PostCSS
+
+При использовании `transformer: 'postcss'` может потребоваться установка следующих пакетов — в зависимости от задействованных возможностей:
+
+| Пакет                                                               | Назначение                                                              | Когда требуется                        |
+| ------------------------------------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------- |
+| [`postcss`](https://github.com/postcss/postcss)                     | Базовый движок PostCSS                                                  | Всегда (при `transformer: 'postcss'`)  |
+| [`postcss-import`](https://github.com/postcss/postcss-import)       | Разрешение и встраивание директив `@import`                             | Когда CSS-файлы используют `@import`   |
+| [`postcss-modules`](https://github.com/css-modules/postcss-modules) | Поддержка CSS modules (имена классов с ограниченной областью видимости) | При использовании файлов `.module.css` |
+
+```bash
+npm install -D postcss postcss-import postcss-modules
+```
+
+Все три пакета объявлены как опциональные peer dependencies для `@tsdown/css` и загружаются только при необходимости.
+
 ## Справочник опций
 
 | Опция                     | Тип                           | По умолчанию          | Описание                                             |
@@ -380,6 +484,7 @@ dist/
 | `css.splitting`           | `boolean`                     | `false`               | Разделение CSS по чанкам                             |
 | `css.fileName`            | `string`                      | `'style.css'`         | Имя объединённого CSS-файла (при `splitting: false`) |
 | `css.minify`              | `boolean`                     | `false`               | Минификация CSS                                      |
+| `css.modules`             | `object \| false`             | `{}`                  | Настройка CSS modules или `false` для отключения     |
 | `css.target`              | `string \| string[] \| false` | _берётся из `target`_ | Целевое окружение для понижения синтаксиса CSS       |
 | `css.postcss`             | `string \| object`            | —                     | Путь к конфигурации PostCSS или встроенные параметры |
 | `css.preprocessorOptions` | `object`                      | —                     | Параметры CSS-препроцессоров                         |
