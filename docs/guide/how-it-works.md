@@ -6,28 +6,28 @@
 
 tsdown анализирует `package.json` и `tsconfig.json` и подбирает разумные значения. Вот что происходит автоматически:
 
-| Когда tsdown обнаруживает...                                      | Он...                                                                    |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| `dependencies` / `peerDependencies` в package.json                | Выносит их наружу (не включает в бандл)                                  |
-| Импорт из `devDependency` в коде                                  | Включает пакет в выходной бандл                                          |
-| Поле `types` или `typings` в package.json                         | Включает генерацию `.d.ts`                                               |
-| `isolatedDeclarations` в tsconfig.json                            | Использует быстрый путь **oxc-transform** для dts                        |
-| `engines.node` в package.json                                     | Определяет [целевое окружение (target)](../options/target.md) по нему    |
-| `type: "module"` в package.json                                   | Использует расширение `.js` для ESM (вместо `.mjs`)                      |
-| `entry` не задан, но есть `src/index.ts`                          | Берёт его как точку входа по умолчанию                                   |
-| `platform: "node"` (по умолчанию)                                 | Включает [`fixedExtension`](../options/output-format.md) (`.mjs`/`.cjs`) |
-| Сборка в двух форматах с `exports: true`                          | Заполняет поля `main`/`module` в package.json                            |
-| Изменения конфига в [режиме наблюдения](../options/watch-mode.md) | Перезапускает сборку                                                     |
+| Когда tsdown обнаруживает...                                                | Он...                                                                    |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| `dependencies` / `peerDependencies` / `optionalDependencies` в package.json | Выносит их наружу (не включает в бандл)                                  |
+| Импорт из `devDependency` в коде                                            | Включает пакет в выходной бандл                                          |
+| Поле `types` или `typings` в package.json                                   | Включает генерацию `.d.ts`                                               |
+| `isolatedDeclarations` в tsconfig.json                                      | Использует быстрый путь **oxc-transform** для dts                        |
+| `engines.node` в package.json                                               | Определяет [целевое окружение (target)](../options/target.md) по нему    |
+| `type: "module"` в package.json                                             | Использует расширение `.js` для ESM (вместо `.mjs`)                      |
+| `entry` не задан, но есть `src/index.ts`                                    | Берёт его как точку входа по умолчанию                                   |
+| `platform: "node"` (по умолчанию)                                           | Включает [`fixedExtension`](../options/output-format.md) (`.mjs`/`.cjs`) |
+| Сборка в двух форматах с `exports: true`                                    | Заполняет поля `main`/`module` в package.json                            |
+| Изменения конфига в [режиме наблюдения](../options/watch-mode.md)           | Перезапускает сборку                                                     |
 
 Ниже каждая область описана подробнее.
 
 ## Зависимости {#зависимости}
 
-При публикации библиотеки у пользователей устанавливаются её `dependencies` и `peerDependencies`. Нет смысла включать их в бандл — в рантайме они уже будут доступны.
+При публикации библиотеки у пользователей устанавливаются её `dependencies`, `peerDependencies` и `optionalDependencies`. Нет смысла включать их в бандл — в рантайме они уже будут доступны.
 
 **Поведение по умолчанию:**
 
-- **`dependencies` и `peerDependencies`** **выносятся наружу** — в выводе остаются `import` / `require`, пакеты в бандл не попадают.
+- - **`dependencies`**, **`peerDependencies`**, и **`optionalDependencies`** **выносятся наружу** — в выводе остаются `import` / `require`, пакеты в бандл не попадают.
 - **`devDependencies`** **попадают в бандл, если импортированы**. У пользователей они не ставятся, поэтому код из dev-зависимости автоматически встраивается в вывод.
 - **Фантомные зависимости** (есть в `node_modules`, но не указаны в `package.json`) обрабатываются как devDependencies — в бандл только если используются.
 

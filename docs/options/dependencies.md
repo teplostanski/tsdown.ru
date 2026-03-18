@@ -4,12 +4,13 @@
 
 ## Поведение по умолчанию
 
-### `dependencies` и `peerDependencies`
+### `dependencies`, `peerDependencies` и `optionalDependencies`
 
-По умолчанию `tsdown` **не включает в бандл** зависимости, указанные в полях `dependencies` и `peerDependencies` вашего `package.json`:
+По умолчанию `tsdown` **не включает в бандл** зависимости, указанные в полях `dependencies`, `peerDependencies` и `optionalDependencies` вашего `package.json`:
 
 - **`dependencies`**: считаются внешними и не попадают в итоговый бандл. Они будут установлены автоматически при установке вашей библиотеки через npm или другой менеджер пакетов.
 - **`peerDependencies`**: также считаются внешними. Пользователь вашей библиотеки должен установить их самостоятельно (иногда это делает менеджер пакетов автоматически).
+- **`optionalDependencies`**: также считаются внешними. Они могут быть установлены или пропущены в зависимости от платформы пользователя и его конфигурации.
 
 ### `devDependencies` и фантомные зависимости
 
@@ -99,7 +100,7 @@ export default defineConfig({
 
 ### Опция `deps.alwaysBundle` {#deps-alwaysbundle}
 
-Опция `alwaysBundle` позволяет принудительно включить в бандл отдельные зависимости, даже если они указаны в `dependencies` или `peerDependencies`. Например:
+Опция `alwaysBundle` позволяет принудительно включить в бандл отдельные зависимости, даже если они указаны в `dependencies`, `peerDependencies` или `optionalDependencies`. Например:
 
 ```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
@@ -148,7 +149,7 @@ export default defineConfig({
 ## Краткое резюме
 
 - **По умолчанию**:
-  - `dependencies` и `peerDependencies` считаются внешними и не включаются в бандл.
+  - `dependencies`, `peerDependencies` и `optionalDependencies` считаются внешними и не включаются в бандл.
   - `devDependencies` и фантомные зависимости включаются в сборку только если они фактически используются в вашем коде.
 - **Настройка**:
   - Используйте `deps.onlyBundle`, чтобы разрешить включение в бандл только перечисленных зависимостей и завершать сборку с ошибкой при любых других.
