@@ -38,7 +38,7 @@ export default defineConfig({
 
 ### `deps.skipNodeModulesBundle` {#deps-skipnodemodulesbundle}
 
-Если вы хотите **полностью пропустить разрешение и сборку всех зависимостей из `node_modules`**, включите `skipNodeModulesBundle`:
+Если вы хотите, чтобы **зависимости из `node_modules` не попадали в бандл**, включите `skipNodeModulesBundle`:
 
 ```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
@@ -50,7 +50,7 @@ export default defineConfig({
 })
 ```
 
-Это не позволит `tsdown` обрабатывать и собирать какие-либо зависимости из `node_modules`, независимо от того, как они используются в коде.
+При этой опции `tsdown` **не включает в бандл** зависимости из `node_modules`, независимо от того, как они используются в коде.
 
 ::: warning
 `skipNodeModulesBundle` нельзя использовать вместе с `alwaysBundle`: эти опции взаимоисключающие.
@@ -155,7 +155,7 @@ export default defineConfig({
   - Используйте `deps.onlyBundle`, чтобы разрешить включение в бандл только перечисленных зависимостей и завершать сборку с ошибкой при любых других.
   - Используйте `deps.neverBundle`, чтобы явно пометить отдельные зависимости как внешние.
   - Используйте `deps.alwaysBundle`, чтобы принудительно включить отдельные зависимости в бандл.
-  - Используйте `deps.skipNodeModulesBundle`, чтобы пропустить разрешение и сборку всех зависимостей из `node_modules`.
+  - Используйте `deps.skipNodeModulesBundle`, чтобы зависимости из `node_modules` не попадали в бандл.
 - **Файлы деклараций**:
   - Логика сборки файлов деклараций теперь аналогична JavaScript.
   - Используйте `resolver: 'tsc'` для лучшей совместимости со сложными типами сторонних библиотек.

@@ -49,7 +49,7 @@ tsdown -W -F my-package
 
 ## Почему в бандл попадают зависимости? {#зависимости-в-бандле}
 
-По умолчанию пакеты из `dependencies` и `peerDependencies` в `package.json` **не** включаются в бандл. В вывод сборки обычно попадает то, что вы действительно импортируете из `devDependencies` или из `node_modules` без записи в `package.json` («фантомные» зависимости). Чтобы полностью пропустить разрешение и сборку всего из `node_modules`, укажите в поле `deps`:
+По умолчанию пакеты из `dependencies` и `peerDependencies` в `package.json` **не** включаются в бандл. В вывод сборки обычно попадает то, что вы действительно импортируете из `devDependencies` или из `node_modules` без записи в `package.json` («фантомные» зависимости). Чтобы зависимости из `node_modules` не попадали в бандл, укажите в поле `deps`:
 
 ```ts
 export default defineConfig({

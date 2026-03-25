@@ -57,7 +57,7 @@ export { MyButton } from './MyButton'
 - **classic**
 - **automatic** (по умолчанию)
 
-Если вам нужно использовать классическое преобразование JSX, вы можете настроить опцию [`inputOptions.jsx`](https://rolldown.rs/reference/config-options#jsx) Rolldown в вашем файле конфигурации:
+Если вам нужно использовать классическое преобразование JSX, вы можете настроить опцию [`inputOptions.jsx`](https://rolldown.rs/reference/InputOptions.transform#jsx) Rolldown в вашем файле конфигурации:
 
 ```ts [tsdown.config.ts]
 import { defineConfig } from 'tsdown'
